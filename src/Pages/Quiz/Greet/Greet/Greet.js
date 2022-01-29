@@ -6,6 +6,7 @@ import StartUpInfo1 from "../StartUpInfo1/StartUpInfo1";
 import "./Greet.css";
 
 import Fade from "react-reveal/Fade";
+import InitialQuiz4 from "../InitialQuiz4/InitialQuiz4";
 
 const Greet = () => {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -26,7 +27,11 @@ const Greet = () => {
     const component = [
         <StartUpInfo1 handlingNext={handlingNext}></StartUpInfo1>,
         <CustomerInfo2 handlingNext={handlingNext}></CustomerInfo2>,
-        <GreetEnd3 customerName={userAnswer?.customerInfo?.name}></GreetEnd3>
+        <GreetEnd3
+            customerName={userAnswer?.customerInfo?.name}
+            handlingNext={handlingNext}
+        ></GreetEnd3>,
+        <InitialQuiz4></InitialQuiz4>
     ];
 
     return (

@@ -6,8 +6,7 @@ import "./GreetEnd3.css";
 import Fade from "react-reveal/Fade";
 import useData from "../../../../hooks/useData";
 
-const GreetEnd3 = ({ customerName }) => {
-    const { quizSection, setQuizSection } = useData();
+const GreetEnd3 = ({ customerName, handlingNext }) => {
     const [revealName, setRevealName] = useState(true);
     const [revealQuestion, setRevealQuestion] = useState(false);
     const [revealList, setRevealList] = useState(false);
@@ -51,17 +50,29 @@ const GreetEnd3 = ({ customerName }) => {
         setTimeout(() => {
             setState(true);
         }, 11000);
+        setTimeout(() => {
+            handlingNext();
+        }, 14000);
 
         return () => clearTimeout();
     }, []);
 
-    const handlingContinue = () => {
-        setState(false);
-        setTimeout(() => {
-            setQuizSection(quizSection + 1);
-        }, 1000);
-        clearTimeout();
-    };
+    // const handlingContinue = () => {
+    //     setState(false);
+    //     setTimeout(() => {
+    //         setQuizSection(quizSection + 1);
+    //     }, 1000);
+    //     clearTimeout();
+    // };
+
+    // <Button
+    //     type="submit"
+    //     sx={{ display: "block", mx: "auto", mt: 3 }}
+    //     onClick={() => handlingContinue()}
+    //     variant="contained"
+    // >
+    //     Continue
+    // </Button>;
 
     const cleaningProducts = [
         "Lysol",
@@ -115,14 +126,6 @@ const GreetEnd3 = ({ customerName }) => {
                         </span>{" "}
                         with a few simple Step ;-){" "}
                     </Typography>
-                    <Button
-                        type="submit"
-                        sx={{ display: "block", mx: "auto", mt: 3 }}
-                        onClick={() => handlingContinue()}
-                        variant="contained"
-                    >
-                        Continue
-                    </Button>
                 </Fade>
             )}
         </div>
