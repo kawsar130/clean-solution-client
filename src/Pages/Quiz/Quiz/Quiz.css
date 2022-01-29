@@ -1,0 +1,14 @@
+.quiz-container {
+    background-image: url("https://i.ibb.co/qNrGqKr/v870-tang-36.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-content {
+    display: flex;
+    justify-content: center;
+}
