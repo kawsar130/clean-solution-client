@@ -31,7 +31,7 @@ const Greet = () => {
             customerName={userAnswer?.customerInfo?.name}
             handlingNext={handlingNext}
         ></GreetEnd3>,
-        <InitialQuiz4></InitialQuiz4>
+        <InitialQuiz4 setRevealState={setRevealState}></InitialQuiz4>
     ];
 
     return (

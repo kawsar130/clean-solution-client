@@ -1,6 +1,7 @@
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import useData from "../../../hooks/useData";
+import AppHome from "../AppHome/AppHome/AppHome";
 import Greet from "../Greet/Greet/Greet";
 import Test from "../Greet/GreetEnd3/Test";
 import "./Quiz.css";
@@ -16,7 +17,7 @@ const Quiz = () => {
         setUserAnswer
     } = useData();
 
-    const Components = [<Greet></Greet>, <Test></Test>];
+    const Components = [<Greet></Greet>, <AppHome></AppHome>];
 
     return (
         <Box className="quiz-container">

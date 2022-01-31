@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import "./GreetEnd3.css";
 
 import Fade from "react-reveal/Fade";
-import useData from "../../../../hooks/useData";
 
 const GreetEnd3 = ({ customerName, handlingNext }) => {
     const [revealName, setRevealName] = useState(true);
