@@ -1,0 +1,31 @@
+{
+    "customerInfo": {
+        "name": "Kawsar Ahmed",
+        "productCurrentlyUsingQty": "2-5"
+    },
+    "customerAnswers": [
+        {
+            "heading": "SKIN CONTACT",
+            "topic": "FUNGAL OR BACTERIAL INFECTIONS",
+            "topicIndex": 2,
+            "answers": [
+                {
+                    "questionText": "How many times per month do you treat skin infections?",
+                    "options": [],
+                    "answerText": "2"
+                },
+                {
+                    "questionText": "How long would you like to have this supply?",
+                    "options": ["1 month, 6 month, 1 year, 2 years, 5 years"],
+                    "answerText": "6 month",
+                    "answerIndex": 1
+                },
+                {
+                    "questionText": "How many places would you keep this supply?",
+                    "options": [],
+                    "answerText": "2"
+                }
+            ]
+        }
+    ]
+}

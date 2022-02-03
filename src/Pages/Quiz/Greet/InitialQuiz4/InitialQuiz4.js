@@ -33,11 +33,11 @@ const InitialQuiz4 = ({ setRevealState }) => {
                     <Button
                         onClick={() => handlingClick(option.option)}
                         sx={{
-                            border: 1,
+                            border: "1px solid skyBlue",
                             color: "darkSlateGray",
-                            backgroundColor: "rgba(205, 205, 205, 0.8)",
+                            backgroundColor: "rgba(217, 228, 255, 0.8)",
                             "&:hover": {
-                                backgroundColor: "rgba(55, 55, 55, 0.8)",
+                                backgroundColor: "rgba(0, 191, 255, 0.8)",
                                 color: "white"
                             },
                             fontSize: "2em",
@@ -45,7 +45,7 @@ const InitialQuiz4 = ({ setRevealState }) => {
                             m: "0.5em",
                             width: "200px",
                             height: "200px",
-                            borderRadius: "50%"
+                            borderRadius: "5px"
                         }}
                         className="initial-quiz-btn"
                         key={option.id}
