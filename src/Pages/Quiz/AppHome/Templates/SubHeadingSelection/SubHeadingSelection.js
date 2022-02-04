@@ -33,9 +33,7 @@ const SubHeadingSelection = ({
                 {details.map((subHeading, index) => (
                     <HtmlTooltip title={subHeading?.info} arrow key={index}>
                         <Button
-                            onClick={() =>
-                                handlingNext(subHeading?.title, index)
-                            }
+                            onClick={() => handlingNext(null, index)}
                             sx={quizButtonStyle}
                         >
                             <Typography sx={{ mr: 2 }} variant="h3">

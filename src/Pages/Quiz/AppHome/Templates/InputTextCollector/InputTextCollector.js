@@ -17,18 +17,29 @@ const ValidationTextField = styled(TextField)({
     }
 });
 
-const InputTextCollector = ({ questionText, handlingNext }) => {
+const InputTextCollector = ({ questionData, handlingNext }) => {
     const [text, setText] = useState("");
 
     const handleChange = (event) => {
         setText(event.target.value);
     };
 
+    const updateAndNext = (text) => {
+        const dataSet = {
+            questionText: questionData.question,
+            questionIndex: questionData.qIndex,
+            options: [],
+            answerText: text,
+            answerIndex: null
+        };
+        handlingNext(dataSet);
+    };
+
     const NextButton = [
         <Button
             type="submit"
             sx={{ display: "block", mx: "auto", mt: 3 }}
-            onClick={() => handlingNext(text)}
+            onClick={() => updateAndNext(text)}
             variant="contained"
         >
             Next
@@ -45,8 +56,10 @@ const InputTextCollector = ({ questionText, handlingNext }) => {
 
     return (
         <Box noValidate sx={{ maxWidth: 700 }}>
-            <Typography variant="h5" sx={{ mb: 3 }}>
-                {questionText}
+            <Typography variant="h4" sx={{ mb: 3 }}>
+                {questionData.qIndex}
+                {". "}
+                {questionData.question}
             </Typography>
             <ValidationTextField
                 label="Your Answer"

@@ -6,24 +6,29 @@
     "customerAnswers": [
         {
             "heading": "SKIN CONTACT",
-            "topic": "FUNGAL OR BACTERIAL INFECTIONS",
-            "topicIndex": 2,
+            "subHeading": "FUNGAL OR BACTERIAL INFECTIONS",
+            "subHeadingIndex": 2,
             "answers": [
                 {
                     "questionText": "How many times per month do you treat skin infections?",
+                    "questionIndex": 1,
                     "options": [],
-                    "answerText": "2"
+                    "answerText": "2",
+                    "answerIndex": null
                 },
                 {
                     "questionText": "How long would you like to have this supply?",
+                    "questionIndex": 2,
                     "options": ["1 month, 6 month, 1 year, 2 years, 5 years"],
                     "answerText": "6 month",
                     "answerIndex": 1
                 },
                 {
                     "questionText": "How many places would you keep this supply?",
+                    "questionIndex": 3,
                     "options": [],
-                    "answerText": "2"
+                    "answerText": "2",
+                    "answerIndex": null
                 }
             ]
         }

@@ -20,6 +20,7 @@ const InitialQuiz4 = ({ setRevealState }) => {
     const handlingClick = (addedAnswer) => {
         setRevealState(false);
         userAnswer.customerInfo.productCurrentlyUsingQty = addedAnswer;
+        userAnswer.customerAnswers = [];
         setTimeout(() => setQuizSection(quizSection + 1), 500);
         clearTimeout();
     };
