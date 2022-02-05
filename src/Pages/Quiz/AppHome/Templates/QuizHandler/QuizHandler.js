@@ -15,7 +15,7 @@ const QuizHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
     return (
         <Box>
             <Typography variant="h4" sx={{ mb: 2 }}>
-                {questionData.qIndex}
+                {questionData.qIndex + 1}
                 {". "}
                 {questionData.question}
             </Typography>

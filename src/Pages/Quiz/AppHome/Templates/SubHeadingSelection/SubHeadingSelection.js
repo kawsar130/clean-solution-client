@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, Box, Typography, Tooltip, Button } from "@mui/material";
 import { tooltipClasses } from "@mui/material/Tooltip";
+import Fade from "react-reveal/Fade";
 
 // Popover code
 const HtmlTooltip = styled(({ className, ...props }) => (
@@ -21,36 +22,49 @@ const SubHeadingSelection = ({
     quizButtonStyle,
     handlingNext
 }) => {
-    const { heading, intro, details } = sectionData;
+    const [revealState, setRevealState] = useState(false);
+    const { heading, intro, subheadings } = sectionData;
+
+    useEffect(() => {
+        setRevealState(true);
+    }, []);
 
     return (
         <Box>
-            <Typography variant="h4" sx={{ mb: 2 }}>
-                {heading}
-            </Typography>
-            <Typography>{intro}</Typography>
-            <Box sx={{ mt: 4, display: "flex" }}>
-                {details.map((subHeading, index) => (
-                    <HtmlTooltip title={subHeading?.info} arrow key={index}>
-                        <Button
-                            onClick={() => handlingNext(null, index)}
-                            sx={quizButtonStyle}
-                        >
-                            <Typography sx={{ mr: 2 }} variant="h3">
-                                {icons[index]}
-                            </Typography>
-                            <Box>
-                                <Typography variant="h6">
-                                    {subHeading?.title}
-                                </Typography>
-                                <Typography variant="subtitle2">
-                                    {subHeading?.qty}
-                                </Typography>
-                            </Box>
-                        </Button>
-                    </HtmlTooltip>
-                ))}
-            </Box>
+            <Fade right opposite when={revealState}>
+                <Box>
+                    <Typography variant="h4" sx={{ mb: 2 }}>
+                        {heading}
+                    </Typography>
+                    <Typography>{intro}</Typography>
+                    <Box sx={{ mt: 4, display: "flex" }}>
+                        {subheadings?.map((subHeading, index) => (
+                            <HtmlTooltip
+                                title={subHeading?.info}
+                                arrow
+                                key={index}
+                            >
+                                <Button
+                                    onClick={() => handlingNext(null, index)}
+                                    sx={quizButtonStyle}
+                                >
+                                    <Typography sx={{ mr: 2 }} variant="h3">
+                                        {icons[index]}
+                                    </Typography>
+                                    <Box>
+                                        <Typography variant="h6">
+                                            {subHeading?.title}
+                                        </Typography>
+                                        <Typography variant="subtitle2">
+                                            {subHeading?.qty}
+                                        </Typography>
+                                    </Box>
+                                </Button>
+                            </HtmlTooltip>
+                        ))}
+                    </Box>
+                </Box>
+            </Fade>
         </Box>
     );
 };

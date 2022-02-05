@@ -57,7 +57,7 @@ const InputTextCollector = ({ questionData, handlingNext }) => {
     return (
         <Box noValidate sx={{ maxWidth: 700 }}>
             <Typography variant="h4" sx={{ mb: 3 }}>
-                {questionData.qIndex}
+                {questionData.qIndex + 1}
                 {". "}
                 {questionData.question}
             </Typography>

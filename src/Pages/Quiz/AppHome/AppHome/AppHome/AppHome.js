@@ -38,8 +38,8 @@ const icons = [
 const AppHome = () => {
     const [questionData, setQuestionData] = useState([]);
     const [showAppHome, setShowAppHome] = useState(true);
-    const [appIndex, setAppIndex] = useState(0);
-    const { userAnswer, setUserAnswer } = useData();
+
+    const { appIndex } = useData();
 
     useEffect(() => {
         fetch("Quiz.json")
@@ -89,6 +89,8 @@ const AppHome = () => {
         <ProfessionalEstablishments5></ProfessionalEstablishments5>,
         <FarmAndRanch6></FarmAndRanch6>
     ];
+
+    console.log("AppIndex: " + appIndex);
 
     return (
         <Box>
