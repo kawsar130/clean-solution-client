@@ -30,7 +30,8 @@ const InputTextCollector = ({ questionData, handlingNext }) => {
             questionIndex: questionData.qIndex,
             options: [],
             answerText: text,
-            answerIndex: null
+            answerIndex: null,
+            ansType: questionData.ansType
         };
         handlingNext(dataSet);
     };
@@ -66,7 +67,7 @@ const InputTextCollector = ({ questionData, handlingNext }) => {
                 fullWidth
                 variant="outlined"
                 id="validation-outlined-input"
-                type="text"
+                type="number"
                 onChange={handleChange}
             />
             {text.length > 0 ? NextButton[0] : NextButton[1]}

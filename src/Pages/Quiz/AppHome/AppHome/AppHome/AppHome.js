@@ -71,26 +71,20 @@ const AppHome = () => {
         cursor: "pointer"
     };
 
-    // const handlingSelect = (addedAnswer) => {
-    //     userAnswer.customerAnswers = addedAnswer;
-    //     setTimeout(() => setQuizSection(quizSection + 1), 500);
-    //     clearTimeout();
-    // };
-    // console.log(userAnswer);
-
     const app = [
         <SkinContact1
             skinContactData={questionData[0]}
             quizButtonStyle={quizButtonStyle}
         ></SkinContact1>,
-        <WaterTreatment2></WaterTreatment2>,
+        <WaterTreatment2
+            waterTreatmentData={questionData[1]}
+            quizButtonStyle={quizButtonStyle}
+        ></WaterTreatment2>,
         <HomeAndGarden3></HomeAndGarden3>,
         <TravelAndLeisure4></TravelAndLeisure4>,
         <ProfessionalEstablishments5></ProfessionalEstablishments5>,
         <FarmAndRanch6></FarmAndRanch6>
     ];
-
-    console.log("AppIndex: " + appIndex);
 
     return (
         <Box>

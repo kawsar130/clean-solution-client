@@ -8,7 +8,8 @@ const QuizHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
             questionIndex: questionData.qIndex,
             options: questionData.answer,
             answerText: option,
-            answerIndex: index
+            answerIndex: index,
+            ansType: questionData.ansType
         };
         handlingNext(dataSet);
     };

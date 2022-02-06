@@ -29,6 +29,14 @@ const SubHeadingSelection = ({
         setRevealState(true);
     }, []);
 
+    const handlingClick = (index) => {
+        setRevealState(false);
+        setTimeout(() => {
+            handlingNext(null, index);
+        }, 500);
+        clearTimeout();
+    };
+
     return (
         <Box>
             <Fade right opposite when={revealState}>
@@ -45,7 +53,7 @@ const SubHeadingSelection = ({
                                 key={index}
                             >
                                 <Button
-                                    onClick={() => handlingNext(null, index)}
+                                    onClick={() => handlingClick(index)}
                                     sx={quizButtonStyle}
                                 >
                                     <Typography sx={{ mr: 2 }} variant="h3">
