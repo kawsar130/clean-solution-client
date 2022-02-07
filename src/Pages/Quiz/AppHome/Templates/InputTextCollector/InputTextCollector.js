@@ -33,6 +33,7 @@ const InputTextCollector = ({ questionData, handlingNext }) => {
             answerIndex: null,
             ansType: questionData.ansType
         };
+        setText("");
         handlingNext(dataSet);
     };
 
@@ -68,6 +69,7 @@ const InputTextCollector = ({ questionData, handlingNext }) => {
                 variant="outlined"
                 id="validation-outlined-input"
                 type="number"
+                value={text}
                 onChange={handleChange}
             />
             {text.length > 0 ? NextButton[0] : NextButton[1]}

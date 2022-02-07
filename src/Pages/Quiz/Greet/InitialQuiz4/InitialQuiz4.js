@@ -38,7 +38,7 @@ const InitialQuiz4 = ({ setRevealState }) => {
                             color: "darkSlateGray",
                             backgroundColor: "rgba(217, 228, 255, 0.8)",
                             "&:hover": {
-                                backgroundColor: "rgba(0, 191, 255, 0.8)",
+                                backgroundColor: "rgba(31, 36, 132, 0.8)",
                                 color: "white"
                             },
                             fontSize: "2em",

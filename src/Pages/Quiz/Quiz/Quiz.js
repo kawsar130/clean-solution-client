@@ -1,6 +1,7 @@
 import { Box } from "@mui/system";
 import useData from "../../../hooks/useData";
 import AppHome from "../AppHome/AppHome/AppHome/AppHome";
+
 import Greet from "../Greet/Greet/Greet";
 import "./Quiz.css";
 

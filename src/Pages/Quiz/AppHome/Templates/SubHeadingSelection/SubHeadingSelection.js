@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { styled, Box, Typography, Tooltip, Button } from "@mui/material";
+import { styled, Box, Typography, Tooltip, Button, Grid } from "@mui/material";
 import { tooltipClasses } from "@mui/material/Tooltip";
 import Fade from "react-reveal/Fade";
 
@@ -45,31 +45,39 @@ const SubHeadingSelection = ({
                         {heading}
                     </Typography>
                     <Typography>{intro}</Typography>
-                    <Box sx={{ mt: 4, display: "flex" }}>
-                        {subheadings?.map((subHeading, index) => (
-                            <HtmlTooltip
-                                title={subHeading?.info}
-                                arrow
-                                key={index}
-                            >
-                                <Button
-                                    onClick={() => handlingClick(index)}
-                                    sx={quizButtonStyle}
+                    <Box sx={{ mt: 4 }}>
+                        <Grid
+                            container
+                            sx={{
+                                display: "flex",
+                                justifyContent: "center"
+                            }}
+                        >
+                            {subheadings?.map((subHeading, index) => (
+                                <HtmlTooltip
+                                    title={subHeading?.info}
+                                    arrow
+                                    key={index}
                                 >
-                                    <Typography sx={{ mr: 2 }} variant="h3">
-                                        {icons[index]}
-                                    </Typography>
-                                    <Box>
-                                        <Typography variant="h6">
-                                            {subHeading?.title}
+                                    <Button
+                                        onClick={() => handlingClick(index)}
+                                        sx={quizButtonStyle}
+                                    >
+                                        <Typography sx={{ mr: 2 }} variant="h3">
+                                            {icons[index]}
                                         </Typography>
-                                        <Typography variant="subtitle2">
-                                            {subHeading?.qty}
-                                        </Typography>
-                                    </Box>
-                                </Button>
-                            </HtmlTooltip>
-                        ))}
+                                        <Box>
+                                            <Typography variant="h6">
+                                                {subHeading?.title}
+                                            </Typography>
+                                            <Typography variant="subtitle2">
+                                                {subHeading?.qty}
+                                            </Typography>
+                                        </Box>
+                                    </Button>
+                                </HtmlTooltip>
+                            ))}
+                        </Grid>
                     </Box>
                 </Box>
             </Fade>
