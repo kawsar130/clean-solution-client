@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import InputTextCollector from "../InputTextCollector/InputTextCollector";
 import QuizHandler from "../QuizHandler/QuizHandler";
+import CheckboxHandler from "../CheckboxHandler/CheckboxHandler";
 
 const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
     return (
@@ -10,6 +11,7 @@ const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
                 <InputTextCollector
                     questionData={questionData}
                     handlingNext={handlingNext}
+                    quizButtonStyle={quizButtonStyle}
                 ></InputTextCollector>
             )}
             {questionData?.ansType === "quiz" && (
@@ -18,6 +20,13 @@ const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
                     handlingNext={handlingNext}
                     quizButtonStyle={quizButtonStyle}
                 ></QuizHandler>
+            )}
+            {questionData?.ansType === "checkbox" && (
+                <CheckboxHandler
+                    questionData={questionData}
+                    handlingNext={handlingNext}
+                    quizButtonStyle={quizButtonStyle}
+                ></CheckboxHandler>
             )}
         </Box>
     );

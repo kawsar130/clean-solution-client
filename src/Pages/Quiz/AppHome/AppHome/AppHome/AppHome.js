@@ -129,7 +129,6 @@ const AppHome = () => {
         if (totalQuestion) {
             setQuestionIndex(questionIndex + 1);
             questionIndexUpdate = questionIndex + 1;
-            console.log("check");
         }
 
         setTimeout(() => setRevealState(true), 500);

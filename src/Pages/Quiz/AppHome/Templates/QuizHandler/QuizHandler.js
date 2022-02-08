@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 
 const QuizHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
@@ -21,17 +21,22 @@ const QuizHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
                 {questionData.question}
             </Typography>
             <Box sx={{ mt: 4, display: "flex" }}>
-                {questionData.answer.map((option, index) => (
-                    <Button
-                        key={index}
-                        onClick={() => updateAndNext(option, index)}
-                        sx={quizButtonStyle}
-                    >
-                        <Box>
-                            <Typography variant="h6">{option}</Typography>
-                        </Box>
-                    </Button>
-                ))}
+                <Grid
+                    container
+                    sx={{ display: "flex", justifyContent: "center" }}
+                >
+                    {questionData.answer.map((option, index) => (
+                        <Button
+                            key={index}
+                            onClick={() => updateAndNext(option, index)}
+                            sx={quizButtonStyle}
+                        >
+                            <Box>
+                                <Typography variant="h6">{option}</Typography>
+                            </Box>
+                        </Button>
+                    ))}
+                </Grid>
             </Box>
         </Box>
     );
