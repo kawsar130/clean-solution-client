@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
     Box,
     Button,
@@ -7,7 +8,6 @@ import {
     Grid,
     Alert
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
 
 const ValidationTextField = styled(TextField)({
     "& input:valid + fieldset": {
@@ -36,7 +36,7 @@ const InputTextCollector = ({
     const [updateChange, setUpdateChange] = useState(false);
 
     useEffect(() => {
-        setStrengthList(questionData.strength);
+        setStrengthList(questionData?.strength);
     }, [questionData, updateChange]);
 
     const clickedColor = {

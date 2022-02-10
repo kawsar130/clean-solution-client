@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import InputTextCollector from "../InputTextCollector/InputTextCollector";
 import QuizHandler from "../QuizHandler/QuizHandler";
 import CheckboxHandler from "../CheckboxHandler/CheckboxHandler";
+import CalculatorHandler from "../CalculatorHandler/CalculatorHandler/CalculatorHandler";
 
 const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
     return (
@@ -27,6 +28,13 @@ const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
                     handlingNext={handlingNext}
                     quizButtonStyle={quizButtonStyle}
                 ></CheckboxHandler>
+            )}
+            {questionData?.ansType === "calculator" && (
+                <CalculatorHandler
+                    questionData={questionData}
+                    handlingNext={handlingNext}
+                    quizButtonStyle={quizButtonStyle}
+                ></CalculatorHandler>
             )}
         </Box>
     );
