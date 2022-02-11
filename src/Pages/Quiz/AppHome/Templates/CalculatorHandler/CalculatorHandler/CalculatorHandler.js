@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import uniqid from "uniqid";
 import {
     Box,
     Button,
@@ -14,13 +15,22 @@ import RoomCalculator from "../RoomCalculator/RoomCalculator";
 
 const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
     const [isRoomCalculator, setIsRoomCalculator] = useState(true);
-    const [roomNumber, setRoomNumber] = useState([1]);
+    const [roomList, setRoomList] = useState([{ id: "abcd1234" }]);
     const [totalRoomData, setTotalRoomData] = useState([]);
 
     const addRoom = () => {
-        setRoomNumber([...roomNumber, roomNumber.length + 1]);
+        const id = uniqid();
+        setRoomList((roomList) => [
+            ...roomList,
+            {
+                id
+            }
+        ]);
     };
-    console.log(roomNumber);
+
+    const removeRoom = (id) => {
+        setRoomList((roomList) => roomList.filter((room) => room.id !== id));
+    };
 
     const updateAndNext = () => {
         console.log("updateAndNext Clicked");
@@ -35,24 +45,20 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
                     ? `${questionData.question}`
                     : `${questionData.question1}`}
             </Typography>
-            {roomNumber.map((room, index) => (
-                <RoomCalculator
-                    key={index}
-                    questionData={questionData}
-                    quizButtonStyle={quizButtonStyle}
-                    updateAndNext={updateAndNext}
-                    setTotalRoomData={setTotalRoomData}
-                    room={room}
-                    setRoomNumber={setRoomNumber}
-                    roomNumber={roomNumber}
-                ></RoomCalculator>
-            ))}
+
+            {roomList.map((room, index) => {
+                return (
+                    <RoomCalculator
+                        key={room.id}
+                        questionData={questionData}
+                        index={index + 1}
+                        id={room.id}
+                        removeRoom={removeRoom}
+                    />
+                );
+            })}
             <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Button
-                    onClick={() => addRoom()}
-                    sx={{ my: 1 }}
-                    variant="contained"
-                >
+                <Button onClick={addRoom} sx={{ my: 1 }} variant="contained">
                     Add Room
                 </Button>
                 {isRoomCalculator ? (

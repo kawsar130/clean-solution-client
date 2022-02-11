@@ -29,15 +29,9 @@ const ValidationTextField = styled(TextField)({
     }
 });
 
-const RoomCalculator = ({
-    questionData,
-    updateAndNext,
-    room,
-    roomNumber,
-    setRoomNumber
-}) => {
+const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
     const [roomData, setRoomData] = useState({
-        roomIndex: null,
+        roomIndex: index,
         height: 0,
         width: 0,
         length: 0,
@@ -127,12 +121,6 @@ const RoomCalculator = ({
         event.target.blur();
     };
 
-    const removeRoom = () => {
-        const totalRoom = [...roomNumber];
-        totalRoom.pop();
-        setRoomNumber(totalRoom);
-    };
-
     return (
         <Box
             sx={{
@@ -146,10 +134,10 @@ const RoomCalculator = ({
             }}
         >
             <Typography variant="h5" sx={{ mb: 3 }}>
-                ROOM NUMBER: {room}
+                ROOM NUMBER: {index}
             </Typography>
             <Button
-                onClick={() => removeRoom()}
+                onClick={() => removeRoom(id)}
                 sx={{
                     position: "absolute",
                     top: "10px",
@@ -208,12 +196,11 @@ const RoomCalculator = ({
                         }}
                     >
                         <Typography variant="h6">
-                            Area: {!roomData.area ? "0" : roomData.area} ft
+                            Area: {!roomData.area ? 0 : roomData.area} ft
                             <sup>2</sup>
                         </Typography>
                         <Typography variant="h6">
-                            Volume: {!roomData.volume ? "0" : roomData.volume}{" "}
-                            ft
+                            Volume: {!roomData.volume ? 0 : roomData.volume} ft
                             <sup>3</sup>
                         </Typography>
                     </Box>
@@ -235,10 +222,14 @@ const RoomCalculator = ({
                                     justifyContent: "center"
                                 }}
                             >
-                                {strengthList?.map((strength, index) => (
-                                    <Grid item xs={12} sm={12}>
+                                {strengthList?.map((strength) => (
+                                    <Grid
+                                        item
+                                        xs={12}
+                                        sm={12}
+                                        key={strength.index}
+                                    >
                                         <Button
-                                            key={index}
                                             onClick={() => clicked(strength)}
                                             sx={
                                                 strength.selectedStatus
