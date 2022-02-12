@@ -29,9 +29,18 @@ const ValidationTextField = styled(TextField)({
     }
 });
 
-const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
+const RoomCalculator = ({
+    questionData,
+    index,
+    id,
+    removeRoom,
+    totalRoomData,
+    setTotalRoomData
+}) => {
     const [roomData, setRoomData] = useState({
+        roomId: id,
         roomIndex: index,
+        roomNumber: index + 1,
         height: 0,
         width: 0,
         length: 0,
@@ -44,14 +53,20 @@ const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
     const [isStrengthSelected, setIsStrengthSelected] = useState(null);
 
     useEffect(() => {
-        setStrengthList(questionData?.strength);
+        // copying questionData to the state initially
+        const newStrengthList = [];
+        for (const strength of questionData?.strength) {
+            const element = { ...strength };
+            newStrengthList.push(element);
+        }
+        setStrengthList(newStrengthList);
     }, [questionData]);
 
     const handleChange = (event) => {
         const field = event.target.name;
         const value = event.target.value;
         const newRoomData = { ...roomData };
-        newRoomData[field] = parseInt(value);
+        newRoomData[field] = value ? parseInt(value) : 0;
         newRoomData["area"] = newRoomData["width"] * newRoomData["length"];
         newRoomData["volume"] = newRoomData["area"] * newRoomData["height"];
         setRoomData(newRoomData);
@@ -64,18 +79,62 @@ const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
 
     // Action on Clicking Strength
     const clicked = (selected) => {
-        const strengths = [...strengthList];
-        strengths.map((strength) => (strength.selectedStatus = false));
+        // copying strengthList to new variable and making every button selectedStatus false
+        const newStrength = [];
+        for (const strength of strengthList) {
+            const element = { ...strength, selectedStatus: false };
+            newStrength.push(element);
+        }
 
         // If roomData become erased after Strength Selected.
         if (!isRoomDataAvailable) {
             setIsRoomDataAvailable(false);
             return;
         }
-        let selectedStrength = selected;
+
+        // copying selected button data to a variable to keep immutability
+        const selectedStrength = { ...selected };
+
         selectedStrength.selectedStatus = true;
         setUserSelectedStrength(selectedStrength);
+
+        // making the selected button status true.
+        for (const strength of newStrength) {
+            if (strength.index === selectedStrength.index) {
+                strength.selectedStatus = true;
+            }
+        }
+        setStrengthList(newStrength);
         setIsStrengthSelected(true);
+        const newRoomData = {
+            ...roomData,
+            strength: selectedStrength
+        };
+        setRoomData(newRoomData);
+
+        if (totalRoomData.length) {
+            for (const [i, room] of totalRoomData.entries()) {
+                if (room.roomId === id) {
+                    const updatedRoom = { ...newRoomData };
+                    const getTotalRoom = [...totalRoomData];
+                    getTotalRoom[i] = updatedRoom;
+                    setTotalRoomData(getTotalRoom);
+                    console.log("Updating Room:" + getTotalRoom);
+                } else {
+                    const updatedRoom = { ...newRoomData };
+                    const addedRoom = [...totalRoomData, updatedRoom];
+                    setTotalRoomData(addedRoom);
+                    console.log("Adding Room" + addedRoom);
+                }
+            }
+        } else {
+            console.log("Adding to empty roomData");
+            setTotalRoomData((totalRoomData) => [
+                ...totalRoomData,
+                { ...newRoomData }
+            ]);
+        }
+        console.log(totalRoomData);
     };
 
     const buttonStyle = {
@@ -134,7 +193,7 @@ const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
             }}
         >
             <Typography variant="h5" sx={{ mb: 3 }}>
-                ROOM NUMBER: {index}
+                ROOM NUMBER: {index + 1}
             </Typography>
             <Button
                 onClick={() => removeRoom(id)}
@@ -206,7 +265,7 @@ const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
                     </Box>
                 </Box>
                 <Box>
-                    {questionData?.strength && (
+                    {strengthList && (
                         <Box
                             sx={{
                                 display: "flex",
@@ -245,6 +304,9 @@ const RoomCalculator = ({ questionData, index, id, removeRoom }) => {
                                         </Button>
                                     </Grid>
                                 ))}
+                                <Typography>
+                                    {userSelectedStrength.name}
+                                </Typography>
                             </Grid>
                         </Box>
                     )}

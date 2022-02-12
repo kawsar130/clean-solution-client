@@ -51,9 +51,11 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
                     <RoomCalculator
                         key={room.id}
                         questionData={questionData}
-                        index={index + 1}
+                        index={index}
                         id={room.id}
                         removeRoom={removeRoom}
+                        totalRoomData={totalRoomData}
+                        setTotalRoomData={setTotalRoomData}
                     />
                 );
             })}
