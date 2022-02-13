@@ -37,6 +37,10 @@ const RoomCalculator = ({
     totalRoomData,
     setTotalRoomData
 }) => {
+    const [isRoomDataAvailable, setIsRoomDataAvailable] = useState(null);
+    const [strengthList, setStrengthList] = useState([]);
+    const [userSelectedStrength, setUserSelectedStrength] = useState({});
+    const [isStrengthSelected, setIsStrengthSelected] = useState(null);
     const [roomData, setRoomData] = useState({
         roomId: id,
         roomIndex: index,
@@ -45,12 +49,9 @@ const RoomCalculator = ({
         width: 0,
         length: 0,
         area: 0,
-        volume: 0
+        volume: 0,
+        strength: {}
     });
-    const [isRoomDataAvailable, setIsRoomDataAvailable] = useState(null);
-    const [strengthList, setStrengthList] = useState([]);
-    const [userSelectedStrength, setUserSelectedStrength] = useState({});
-    const [isStrengthSelected, setIsStrengthSelected] = useState(null);
 
     useEffect(() => {
         // copying questionData to the state initially
@@ -74,6 +75,27 @@ const RoomCalculator = ({
             setIsRoomDataAvailable(true);
         } else {
             setIsRoomDataAvailable(false);
+        }
+
+        // Adding or updating totalRoomData
+        if (totalRoomData.length) {
+            for (const [i, room] of totalRoomData.entries()) {
+                if (room.roomId === id) {
+                    const updatedRoom = { ...newRoomData };
+                    const getTotalRoom = [...totalRoomData];
+                    getTotalRoom[i] = updatedRoom;
+                    setTotalRoomData(getTotalRoom);
+                    console.log("Updating Room:");
+                } else {
+                    const updatedRoom = { ...newRoomData };
+                    const addedRoom = [...totalRoomData, updatedRoom];
+                    setTotalRoomData(addedRoom);
+                    console.log("Adding Room");
+                }
+            }
+        } else {
+            console.log("Adding to empty roomData array");
+            setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
         }
     };
 
@@ -112,27 +134,25 @@ const RoomCalculator = ({
         };
         setRoomData(newRoomData);
 
-        if (totalRoomData.length) {
+        // Adding or updating totalRoomData
+        if (totalRoomData?.length) {
             for (const [i, room] of totalRoomData.entries()) {
                 if (room.roomId === id) {
                     const updatedRoom = { ...newRoomData };
                     const getTotalRoom = [...totalRoomData];
                     getTotalRoom[i] = updatedRoom;
                     setTotalRoomData(getTotalRoom);
-                    console.log("Updating Room:" + getTotalRoom);
+                    console.log("Updating Room:");
                 } else {
                     const updatedRoom = { ...newRoomData };
                     const addedRoom = [...totalRoomData, updatedRoom];
                     setTotalRoomData(addedRoom);
-                    console.log("Adding Room" + addedRoom);
+                    console.log("Adding Room");
                 }
             }
         } else {
-            console.log("Adding to empty roomData");
-            setTotalRoomData((totalRoomData) => [
-                ...totalRoomData,
-                { ...newRoomData }
-            ]);
+            console.log("Adding to empty roomData array");
+            setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
         }
         console.log(totalRoomData);
     };
