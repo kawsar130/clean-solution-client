@@ -35,7 +35,11 @@ const RoomCalculator = ({
     id,
     removeRoom,
     totalRoomData,
-    setTotalRoomData
+    setTotalRoomData,
+    buildingData,
+    setBuildingData,
+    isRoomCalculatorSelected,
+    setAlertText
 }) => {
     const [isRoomDataAvailable, setIsRoomDataAvailable] = useState(null);
     const [strengthList, setStrengthList] = useState([]);
@@ -43,8 +47,7 @@ const RoomCalculator = ({
     const [isStrengthSelected, setIsStrengthSelected] = useState(null);
     const [roomData, setRoomData] = useState({
         roomId: id,
-        roomIndex: index,
-        roomNumber: index + 1,
+        type: isRoomCalculatorSelected ? "room" : "building",
         height: 0,
         width: 0,
         length: 0,
@@ -54,7 +57,7 @@ const RoomCalculator = ({
     });
 
     useEffect(() => {
-        // copying questionData to the state initially
+        // copying questionData.strength to the state initially
         const newStrengthList = [];
         for (const strength of questionData?.strength) {
             const element = { ...strength };
@@ -71,31 +74,68 @@ const RoomCalculator = ({
         newRoomData["area"] = newRoomData["width"] * newRoomData["length"];
         newRoomData["volume"] = newRoomData["area"] * newRoomData["height"];
         setRoomData(newRoomData);
-        if (newRoomData["volume"]) {
-            setIsRoomDataAvailable(true);
-        } else {
-            setIsRoomDataAvailable(false);
-        }
 
-        // Adding or updating totalRoomData
-        if (totalRoomData.length) {
-            for (const [i, room] of totalRoomData.entries()) {
-                if (room.roomId === id) {
-                    const updatedRoom = { ...newRoomData };
-                    const getTotalRoom = [...totalRoomData];
-                    getTotalRoom[i] = updatedRoom;
-                    setTotalRoomData(getTotalRoom);
-                    console.log("Updating Room:");
-                } else {
+        // Adding or updating RoomData/Building Data based on the RoomCalculatorSelected Status
+        if (isRoomCalculatorSelected) {
+            // Adding or updating totalRoomData
+            if (totalRoomData.length) {
+                let idFound = false;
+                for (const [i, room] of totalRoomData.entries()) {
+                    if (room.roomId === id) {
+                        // updating room
+                        const updatedRoom = { ...newRoomData };
+                        const getTotalRoom = [...totalRoomData];
+                        getTotalRoom[i] = updatedRoom;
+                        setTotalRoomData(getTotalRoom);
+                        setAlertText("");
+                        idFound = true;
+                        console.log("updated room");
+                    }
+                }
+                if (!idFound) {
+                    // Adding room
                     const updatedRoom = { ...newRoomData };
                     const addedRoom = [...totalRoomData, updatedRoom];
                     setTotalRoomData(addedRoom);
-                    console.log("Adding Room");
+                    setAlertText("");
+                    console.log("Added room");
                 }
+            } else {
+                // Adding roomData to empty totalRoomData array
+                setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+                setAlertText("");
+                console.log("Added room to empty array");
             }
         } else {
-            console.log("Adding to empty roomData array");
-            setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+            // Adding or updating buildingData
+            if (buildingData.length) {
+                let idFound = false;
+                for (const [i, building] of buildingData.entries()) {
+                    if (building.roomId === id) {
+                        // updating buildingData
+                        const updatedBuilding = { ...newRoomData };
+                        const getBuildingData = [...buildingData];
+                        getBuildingData[i] = updatedBuilding;
+                        setBuildingData(getBuildingData);
+                        setAlertText("");
+                        idFound = true;
+                        console.log("updated room");
+                    }
+                }
+                if (!idFound) {
+                    // Adding Building
+                    const updatedBuilding = { ...newRoomData };
+                    const addedBuilding = [...buildingData, updatedBuilding];
+                    setBuildingData(addedBuilding);
+                    setAlertText("");
+                    console.log("Added room");
+                }
+            } else {
+                // Adding buildingData to empty buildingData array
+                setBuildingData([{ ...newRoomData }]);
+                setAlertText("");
+                console.log("Added room to empty array");
+            }
         }
     };
 
@@ -109,9 +149,11 @@ const RoomCalculator = ({
         }
 
         // If roomData become erased after Strength Selected.
-        if (!isRoomDataAvailable) {
+        if (!roomData?.volume) {
             setIsRoomDataAvailable(false);
-            return;
+            return false;
+        } else {
+            setIsRoomDataAvailable(true);
         }
 
         // copying selected button data to a variable to keep immutability
@@ -134,27 +176,70 @@ const RoomCalculator = ({
         };
         setRoomData(newRoomData);
 
-        // Adding or updating totalRoomData
-        if (totalRoomData?.length) {
-            for (const [i, room] of totalRoomData.entries()) {
-                if (room.roomId === id) {
-                    const updatedRoom = { ...newRoomData };
-                    const getTotalRoom = [...totalRoomData];
-                    getTotalRoom[i] = updatedRoom;
-                    setTotalRoomData(getTotalRoom);
-                    console.log("Updating Room:");
-                } else {
+        // Adding or updating RoomData/Building Data based on the RoomCalculatorSelected Status
+        if (isRoomCalculatorSelected) {
+            // Adding or updating totalRoomData
+            if (totalRoomData?.length) {
+                let idFound = false;
+                for (const [i, room] of totalRoomData.entries()) {
+                    if (room.roomId === id) {
+                        // updating RoomData
+                        const updatedRoom = { ...newRoomData };
+                        const getTotalRoom = [...totalRoomData];
+                        getTotalRoom[i] = updatedRoom;
+                        setTotalRoomData(getTotalRoom);
+                        setAlertText("");
+                        idFound = true;
+                        console.log("updated room");
+                    }
+                }
+                if (!idFound) {
+                    // Adding RoomData
                     const updatedRoom = { ...newRoomData };
                     const addedRoom = [...totalRoomData, updatedRoom];
                     setTotalRoomData(addedRoom);
-                    console.log("Adding Room");
+                    setAlertText("");
+                    console.log("Added room");
                 }
+            } else {
+                // Adding RoomData to empty totalRoomData array
+                setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+                setAlertText("");
+                console.log("Added room to empty array");
             }
         } else {
-            console.log("Adding to empty roomData array");
-            setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+            // Adding or updating buildingData
+            if (buildingData?.length) {
+                let idFound = false;
+                for (const [i, building] of buildingData.entries()) {
+                    if (building.roomId === id) {
+                        // updating buildingData
+                        const updatedBuilding = { ...newRoomData };
+                        const getBuilding = [...buildingData];
+                        getBuilding[i] = updatedBuilding;
+                        setBuildingData(getBuilding);
+                        setAlertText("");
+                        idFound = true;
+                        console.log("updated room");
+                    }
+                }
+                if (!idFound) {
+                    // Adding Building
+                    const updatedBuilding = { ...newRoomData };
+                    const addedBuilding = [...buildingData, updatedBuilding];
+                    setBuildingData(addedBuilding);
+                    setAlertText("");
+                    console.log("Added room");
+                }
+            } else {
+                // Adding buildingData to empty buildingData array
+                setBuildingData([{ ...newRoomData }]);
+                setAlertText("");
+                console.log("Added room to empty array");
+            }
         }
         console.log(totalRoomData);
+        console.log(buildingData);
     };
 
     const buttonStyle = {
@@ -213,22 +298,26 @@ const RoomCalculator = ({
             }}
         >
             <Typography variant="h5" sx={{ mb: 3 }}>
-                ROOM NUMBER: {index + 1}
+                {isRoomCalculatorSelected
+                    ? `ROOM NUMBER: ${index + 1} (ID: ${id})`
+                    : `Enter Whole Building Data`}
             </Typography>
-            <Button
-                onClick={() => removeRoom(id)}
-                sx={{
-                    position: "absolute",
-                    top: "10px",
-                    right: "20px",
-                    color: "gray",
-                    "&:hover": {
-                        transform: "scale(1.1)"
-                    }
-                }}
-            >
-                <Typography variant="h4">{roomRemoveIcon}</Typography>
-            </Button>
+            {isRoomCalculatorSelected && (
+                <Button
+                    onClick={() => removeRoom(id)}
+                    sx={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "20px",
+                        color: "gray",
+                        "&:hover": {
+                            transform: "scale(1.1)"
+                        }
+                    }}
+                >
+                    <Typography variant="h4">{roomRemoveIcon}</Typography>
+                </Button>
+            )}
             <Box sx={{ display: "flex" }}>
                 <Box sx={{ px: 5 }}>
                     <ValidationTextField
@@ -240,7 +329,7 @@ const RoomCalculator = ({
                         id="validation-outlined-input1"
                         type="number"
                         placeholder="Unit: Ft"
-                        onChange={handleChange}
+                        onBlur={handleChange}
                         onWheel={handleScrolling}
                     />
                     <ValidationTextField
@@ -252,7 +341,7 @@ const RoomCalculator = ({
                         id="validation-outlined-input"
                         type="number"
                         placeholder="Unit: Ft"
-                        onChange={handleChange}
+                        onBlur={handleChange}
                         onWheel={handleScrolling}
                     />
                     <ValidationTextField
@@ -264,7 +353,7 @@ const RoomCalculator = ({
                         id="validation-outlined-input2"
                         type="number"
                         placeholder="Unit: Ft"
-                        onChange={handleChange}
+                        onBlur={handleChange}
                         onWheel={handleScrolling}
                     />
                     <Box
@@ -324,10 +413,18 @@ const RoomCalculator = ({
                                         </Button>
                                     </Grid>
                                 ))}
-                                <Typography>
-                                    {userSelectedStrength.name}
-                                </Typography>
                             </Grid>
+                            {userSelectedStrength?.name && (
+                                <Alert
+                                    sx={{
+                                        mx: "auto"
+                                    }}
+                                    severity="success"
+                                    color="info"
+                                >
+                                    {userSelectedStrength.name}
+                                </Alert>
+                            )}
                         </Box>
                     )}
                 </Box>
@@ -356,7 +453,7 @@ const RoomCalculator = ({
                     }}
                     severity="warning"
                 >
-                    Provide Valid Room Data First!
+                    Please Provide Valid Data!
                 </Alert>
             )}
         </Box>
