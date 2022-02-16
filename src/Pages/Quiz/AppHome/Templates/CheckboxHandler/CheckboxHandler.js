@@ -1,44 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Grid, Typography, Alert } from "@mui/material";
+import { clickedColor } from "../../../../../Styles/Styles";
+import _ from "lodash";
 
 const CheckboxHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
     const [allAnswer, setAllAnswer] = useState([]);
     const [minimumSelectState, setMinimumSelectState] = useState(null);
-    const [updateChange, setUpdateChange] = useState(false);
 
     useEffect(() => {
-        setAllAnswer(questionData.answer);
+        if (questionData?.answer) {
+            const newAllAnswer = _.cloneDeep(questionData.answer);
+            setAllAnswer(newAllAnswer);
+        }
     }, [questionData]);
 
-    const clickedColor = {
-        color: "white",
-        backgroundColor: "rgba(125, 131, 235, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(84, 90, 206, 0.8)",
-            color: "white"
-        },
-        fontSize: "2em",
-        m: "0.5em",
-        borderRadius: "5px",
-        p: "20px",
-        boxShadow: "2px 2px 5px rgba(0, 191, 255, 0.4)",
-        border: "1px solid skyBlue",
-        textAlign: "left",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        cursor: "pointer"
-    };
+    const clicked = (selected, index) => {
+        const newAllAnswer = _.cloneDeep(allAnswer);
 
-    const clicked = (option, index) => {
-        let selectedAnswer = option;
-        if (selectedAnswer?.selectedStatus) {
-            selectedAnswer.selectedStatus = false;
-            setUpdateChange(!updateChange);
-        } else {
-            selectedAnswer.selectedStatus = true;
-            setUpdateChange(!updateChange);
+        let selectedAnswer = { ...selected };
+
+        // Button toggling with changed status
+        for (const [i, ans] of newAllAnswer.entries()) {
+            if (ans.ansIndex === selectedAnswer.ansIndex) {
+                if (selectedAnswer?.selectedStatus) {
+                    selectedAnswer.selectedStatus = false;
+                    newAllAnswer[i] = selectedAnswer;
+                } else {
+                    selectedAnswer.selectedStatus = true;
+                    newAllAnswer[i] = selectedAnswer;
+                }
+            }
         }
+
+        setAllAnswer(newAllAnswer);
     };
 
     const updateAndNext = () => {
@@ -60,15 +54,6 @@ const CheckboxHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
         }
     };
 
-    const NextButton = [
-        <Button
-            sx={{ display: "block", mx: "auto", mt: 3 }}
-            onClick={() => updateAndNext()}
-            variant="contained"
-        >
-            Next
-        </Button>
-    ];
     return (
         <Box>
             <Typography variant="h4" sx={{ mb: 2 }}>
@@ -116,7 +101,13 @@ const CheckboxHandler = ({ questionData, quizButtonStyle, handlingNext }) => {
                     Please Select at least One items!
                 </Alert>
             )}
-            {NextButton[0]}
+            <Button
+                sx={{ display: "block", mx: "auto", mt: 3 }}
+                onClick={() => updateAndNext()}
+                variant="contained"
+            >
+                Next
+            </Button>
         </Box>
     );
 };

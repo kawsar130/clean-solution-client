@@ -2,81 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import AppHomeHeading from "../AppHomeHeading/AppHomeHeading";
 import useData from "../../../../../hooks/useData";
+import { quizButtonStyle } from "../../../../../Styles/Styles";
+import _ from "lodash";
 import Fade from "react-reveal/Fade";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faAllergies,
-    faWater,
-    faHome,
-    faRoute,
-    faLaptopCode,
-    faTractor,
-    faHandsWash,
-    faBacteria,
-    faUserNinja,
-    faHandHoldingWater,
-    faCogs,
-    faWarehouse,
-    faEgg,
-    faFish,
-    faCheese,
-    faHamburger,
-    faDiceD6,
-    faSmog
-} from "@fortawesome/free-solid-svg-icons";
+import { appHomeIcons, allSectionIcons } from "../../../../../Icons/Icons";
 import SectionDataFixer from "../../Templates/SectionDataFixer/SectionDataFixer";
-
-// AppHome Icons
-const skinContactIcon = <FontAwesomeIcon icon={faAllergies} />;
-const waterTreatmentIcon = <FontAwesomeIcon icon={faWater} />;
-const homeAndGardenIcon = <FontAwesomeIcon icon={faHome} />;
-const travelAndLeisureIcon = <FontAwesomeIcon icon={faRoute} />;
-const professionalIcon = <FontAwesomeIcon icon={faLaptopCode} />;
-const farmAndRanchIcon = <FontAwesomeIcon icon={faTractor} />;
-const icons = [
-    skinContactIcon,
-    waterTreatmentIcon,
-    homeAndGardenIcon,
-    travelAndLeisureIcon,
-    professionalIcon,
-    farmAndRanchIcon
-];
-
-// SkinContact Icon
-const handsWashIcon = <FontAwesomeIcon icon={faHandsWash} />;
-const bacteriaIcon = <FontAwesomeIcon icon={faBacteria} />;
-const dandruffIcon = <FontAwesomeIcon icon={faUserNinja} />;
-const skinIcons = [handsWashIcon, bacteriaIcon, dandruffIcon];
-
-// WaterTreatment Icons
-const drinkingWaterIcon = <FontAwesomeIcon icon={faHandHoldingWater} />;
-const systemDisinfectionIcon = <FontAwesomeIcon icon={faCogs} />;
-const waterStorageIcon = <FontAwesomeIcon icon={faWarehouse} />;
-const waterTreatmentIcons = [
-    drinkingWaterIcon,
-    systemDisinfectionIcon,
-    waterStorageIcon
-];
-
-// Home and Garden Icon
-const eggIcon = <FontAwesomeIcon icon={faEgg} />;
-const fishIcon = <FontAwesomeIcon icon={faFish} />;
-const packagedFoodIcon = <FontAwesomeIcon icon={faCheese} />;
-const foodContactSurfaceIcon = <FontAwesomeIcon icon={faHamburger} />;
-const hardAndSoftSurfaceIcon = <FontAwesomeIcon icon={faDiceD6} />;
-const foggingIcon = <FontAwesomeIcon icon={faSmog} />;
-const homeAndGardenIcons = [
-    eggIcon,
-    fishIcon,
-    packagedFoodIcon,
-    foodContactSurfaceIcon,
-    hardAndSoftSurfaceIcon,
-    foggingIcon
-];
-
-// All Section Icons
-const allSectionIcons = [skinIcons, waterTreatmentIcons, homeAndGardenIcons];
 
 const AppHome = () => {
     const [questionData, setQuestionData] = useState([]);
@@ -89,14 +20,16 @@ const AppHome = () => {
         useState(null);
     const [revealState, setRevealState] = useState(true);
 
-    const { appIndex, setAppIndex, userAnswer } = useData();
+    const { appIndex, setAppIndex, userAnswer, setUserAnswer } = useData();
 
+    // Fetching data
     useEffect(() => {
         fetch("Quiz.json")
             .then((res) => res.json())
             .then((data) => setQuestionData(data));
     }, []);
 
+    // Show circular progress till questionData updated
     if (questionData.length === 0) {
         return <CircularProgress />;
     }
@@ -115,13 +48,21 @@ const AppHome = () => {
                 headingIndex: questionData[appIndex].headingIndex,
                 subHeading:
                     questionData[appIndex].subheadings[answerIndex].title,
-                subHeadingIndex: answerIndex,
+                subHeadingIndex:
+                    questionData[appIndex].subheadings[answerIndex]
+                        .subHeadingIndex,
                 answers: []
             };
             setSectionUserData(subHeadingData);
         }
+
+        // getting latest sectionUserData
+        let updatedSectionUserData;
         if (addedAnswer) {
-            sectionUserData.answers.push(addedAnswer);
+            const newSectionUserData = _.cloneDeep(sectionUserData);
+            newSectionUserData.answers.push(addedAnswer);
+            setSectionUserData(newSectionUserData);
+            updatedSectionUserData = newSectionUserData;
         }
 
         // Taking a variable for latest state update in the function
@@ -134,9 +75,12 @@ const AppHome = () => {
         setTimeout(() => setRevealState(true), 500);
         clearTimeout();
 
+        // If an app ends
         if (questionIndexUpdate === totalQuestion) {
-            userAnswer.customerAnswers.push(sectionUserData);
-            console.log(userAnswer);
+            const newUserAnswer = _.cloneDeep(userAnswer);
+            newUserAnswer.mainQuizAnswers.push(updatedSectionUserData); // latest sectionUser Data
+            setUserAnswer(newUserAnswer);
+            console.log(newUserAnswer);
             setTimeout(() => {
                 setAppIndex(appIndex + 1);
                 // resetting all states for new app.
@@ -149,52 +93,28 @@ const AppHome = () => {
         }
     };
 
-    const quizButtonStyle = {
-        color: "darkSlateGray",
-        backgroundColor: "rgba(217, 228, 255, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(31, 36, 132, 0.8)",
-            color: "white"
-        },
-        fontSize: "2em",
-        m: "0.5em",
-        borderRadius: "5px",
-        p: "20px",
-        boxShadow: "2px 2px 5px rgba(0, 191, 255, 0.4)",
-        border: "1px solid skyBlue",
-        textAlign: "left",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        cursor: "pointer"
-    };
-
-    const app = [
-        <SectionDataFixer
-            sectionData={questionData[appIndex]}
-            quizButtonStyle={quizButtonStyle}
-            handlingNext={handlingNext}
-            allSectionIcons={allSectionIcons}
-            totalQuestion={totalQuestion}
-            questionIndex={questionIndex}
-            selectedSubHeadingIndex={selectedSubHeadingIndex}
-        ></SectionDataFixer>
-    ];
-
     return (
         <Box>
             {showAppHome ? (
                 <Fade right opposite when={revealState}>
                     <AppHomeHeading
                         questionData={questionData}
-                        icons={icons}
+                        icons={appHomeIcons}
                         setShowAppHome={setShowAppHome}
                     ></AppHomeHeading>
                 </Fade>
             ) : (
                 <Box>
                     <Fade right opposite when={revealState}>
-                        {app[0]}
+                        <SectionDataFixer
+                            sectionData={questionData[appIndex]}
+                            quizButtonStyle={quizButtonStyle}
+                            handlingNext={handlingNext}
+                            allSectionIcons={allSectionIcons}
+                            totalQuestion={totalQuestion}
+                            questionIndex={questionIndex}
+                            selectedSubHeadingIndex={selectedSubHeadingIndex}
+                        ></SectionDataFixer>
                     </Fade>
                 </Box>
             )}

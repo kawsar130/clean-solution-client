@@ -10,6 +10,10 @@ import {
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+    calculatorHandlerButton,
+    calculatorHandlerClickedButton
+} from "../../../../../../Styles/Styles";
 
 const roomRemoveIcon = <FontAwesomeIcon icon={faTimes} />;
 
@@ -102,7 +106,7 @@ const RoomCalculator = ({
                 }
             } else {
                 // Adding roomData to empty totalRoomData array
-                setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+                setTotalRoomData([{ ...newRoomData }]);
                 setAlertText("");
                 console.log("Added room to empty array");
             }
@@ -203,7 +207,7 @@ const RoomCalculator = ({
                 }
             } else {
                 // Adding RoomData to empty totalRoomData array
-                setTotalRoomData((totalRoomData) => [{ ...newRoomData }]);
+                setTotalRoomData([{ ...newRoomData }]);
                 setAlertText("");
                 console.log("Added room to empty array");
             }
@@ -242,44 +246,6 @@ const RoomCalculator = ({
         console.log(buildingData);
     };
 
-    const buttonStyle = {
-        color: "darkSlateGray",
-        backgroundColor: "rgba(217, 228, 255, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(31, 36, 132, 0.8)",
-            color: "white"
-        },
-        width: "100%",
-        m: "0.5em",
-        borderRadius: "5px",
-        p: "5px",
-        boxShadow: "2px 2px 5px rgba(0, 191, 255, 0.4)",
-        border: "1px solid skyBlue",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        cursor: "pointer"
-    };
-
-    const clickedColor = {
-        color: "white",
-        backgroundColor: "rgba(125, 131, 235, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(84, 90, 206, 0.8)",
-            color: "white"
-        },
-        width: "100%",
-        m: "0.5em",
-        borderRadius: "5px",
-        p: "5px",
-        boxShadow: "2px 2px 5px rgba(0, 191, 255, 0.4)",
-        border: "1px solid skyBlue",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        cursor: "pointer"
-    };
-
     // Disable mouse scrolling that changes value in number type field
     const handleScrolling = (event) => {
         event.target.blur();
@@ -299,7 +265,7 @@ const RoomCalculator = ({
         >
             <Typography variant="h5" sx={{ mb: 3 }}>
                 {isRoomCalculatorSelected
-                    ? `ROOM NUMBER: ${index + 1} (ID: ${id})`
+                    ? `ROOM NUMBER: ${index + 1}`
                     : `Enter Whole Building Data`}
             </Typography>
             {isRoomCalculatorSelected && (
@@ -364,11 +330,11 @@ const RoomCalculator = ({
                         }}
                     >
                         <Typography variant="h6">
-                            Area: {!roomData.area ? 0 : roomData.area} ft
+                            Area: {roomData.area} ft
                             <sup>2</sup>
                         </Typography>
                         <Typography variant="h6">
-                            Volume: {!roomData.volume ? 0 : roomData.volume} ft
+                            Volume: {roomData.volume} ft
                             <sup>3</sup>
                         </Typography>
                     </Box>
@@ -401,8 +367,8 @@ const RoomCalculator = ({
                                             onClick={() => clicked(strength)}
                                             sx={
                                                 strength.selectedStatus
-                                                    ? clickedColor
-                                                    : buttonStyle
+                                                    ? calculatorHandlerClickedButton
+                                                    : calculatorHandlerButton
                                             }
                                         >
                                             <Box>

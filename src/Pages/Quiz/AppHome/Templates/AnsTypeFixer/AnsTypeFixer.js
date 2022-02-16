@@ -4,6 +4,7 @@ import InputTextCollector from "../InputTextCollector/InputTextCollector";
 import QuizHandler from "../QuizHandler/QuizHandler";
 import CheckboxHandler from "../CheckboxHandler/CheckboxHandler";
 import CalculatorHandler from "../CalculatorHandler/CalculatorHandler/CalculatorHandler";
+import InfoHandler from "../InfoHandler/InfoHandler";
 
 const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
     return (
@@ -33,8 +34,14 @@ const AnsTypeFixer = ({ questionData, handlingNext, quizButtonStyle }) => {
                 <CalculatorHandler
                     questionData={questionData}
                     handlingNext={handlingNext}
-                    quizButtonStyle={quizButtonStyle}
                 ></CalculatorHandler>
+            )}
+            {questionData?.ansType === "info" && (
+                <InfoHandler
+                    questionData={questionData}
+                    handlingNext={handlingNext}
+                    quizButtonStyle={quizButtonStyle}
+                ></InfoHandler>
             )}
         </Box>
     );

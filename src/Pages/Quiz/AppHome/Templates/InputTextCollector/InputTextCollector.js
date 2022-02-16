@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import _ from "lodash";
+import { clickedColor } from "../../../../../Styles/Styles";
 import {
     Box,
     Button,
@@ -33,42 +35,31 @@ const InputTextCollector = ({
     const [text, setText] = useState("");
     const [strengthList, setStrengthList] = useState([]);
     const [isStrengthSelected, setIsStrengthSelected] = useState(null);
-    const [updateChange, setUpdateChange] = useState(false);
 
     useEffect(() => {
-        setStrengthList(questionData?.strength);
-    }, [questionData, updateChange]);
-
-    const clickedColor = {
-        color: "white",
-        backgroundColor: "rgba(125, 131, 235, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(84, 90, 206, 0.8)",
-            color: "white"
-        },
-        fontSize: "2em",
-        m: "0.5em",
-        borderRadius: "5px",
-        p: "20px",
-        boxShadow: "2px 2px 5px rgba(0, 191, 255, 0.4)",
-        border: "1px solid skyBlue",
-        textAlign: "left",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        cursor: "pointer"
-    };
+        if (questionData.strength) {
+            const newStrengthList = _.cloneDeep(questionData?.strength);
+            setStrengthList(newStrengthList);
+        }
+    }, [questionData]);
 
     const handleChange = (event) => {
         setText(event.target.value);
     };
 
     const clicked = (selected) => {
-        strengthList.map((strength) => (strength.selectedStatus = false));
-        let selectedAnswer = selected;
+        const newStrengthList = _.cloneDeep(strengthList);
+        newStrengthList.map((strength) => (strength.selectedStatus = false));
+        const selectedAnswer = { ...selected };
         selectedAnswer.selectedStatus = true;
+
+        for (const [i, strength] of newStrengthList.entries()) {
+            if (strength.index === selectedAnswer.index) {
+                newStrengthList[i] = selectedAnswer;
+            }
+        }
+        setStrengthList(newStrengthList);
         setIsStrengthSelected(true);
-        setUpdateChange(!updateChange);
     };
 
     const updateAndNext = (text) => {
@@ -149,7 +140,7 @@ const InputTextCollector = ({
             />
             {questionData?.strength && (
                 <Box sx={{ mt: 5, display: "flex", flexDirection: "column" }}>
-                    <Typography variant="h5">Select Strength</Typography>
+                    <Typography variant="h5">Strength</Typography>
                     <Grid
                         container
                         sx={{ display: "flex", justifyContent: "center" }}
@@ -157,7 +148,7 @@ const InputTextCollector = ({
                         {strengthList.map((option, index) => (
                             <Button
                                 key={index}
-                                onClick={() => clicked(option, index)}
+                                onClick={() => clicked(option)}
                                 sx={
                                     option.selectedStatus
                                         ? clickedColor

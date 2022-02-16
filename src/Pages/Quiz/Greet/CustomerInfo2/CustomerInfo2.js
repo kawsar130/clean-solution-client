@@ -55,7 +55,7 @@ const CustomerInfo2 = ({ handlingNext }) => {
                 type="text"
                 onChange={handleChange}
             />
-            {name.length > 0 ? NextButton[0] : NextButton[1]}
+            {name.length > 1 ? NextButton[0] : NextButton[1]}
         </Box>
     );
 };

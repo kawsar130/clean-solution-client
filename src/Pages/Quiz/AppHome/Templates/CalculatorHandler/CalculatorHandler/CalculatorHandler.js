@@ -5,7 +5,7 @@ import { Box, Button, Typography, Alert, Container } from "@mui/material";
 
 import RoomCalculator from "../RoomCalculator/RoomCalculator";
 
-const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
+const CalculatorHandler = ({ questionData, handlingNext }) => {
     const [isRoomCalculatorSelected, setIsRoomCalculatorSelected] =
         useState(true);
     const [roomList, setRoomList] = useState([{ id: "abcd1234" }]);
@@ -17,9 +17,11 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
     const [alertText, setAlertText] = useState("");
 
     const addRoom = () => {
+        // If room data is available in totalRoomData
         if (totalRoomData?.length > 0) {
             const lastRoomData = totalRoomData[totalRoomData.length - 1];
 
+            // verifying whether the last room data is empty or not before adding new room
             if (lastRoomId !== lastRoomData.roomId) {
                 if (
                     lastRoomData.volume !== 0 &&
@@ -46,6 +48,7 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
         }
     };
 
+    // Removing Room with data
     const removeRoom = (id) => {
         if (roomList.length === 1) {
             return false;
@@ -71,6 +74,7 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
     const updateAndNext = () => {
         let dataSet;
 
+        // check whether roomCalculator Selected or not
         if (isRoomCalculatorSelected) {
             if (totalRoomData.length) {
                 const incompleteData = totalRoomData.filter(
@@ -78,16 +82,18 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
                         room.volume === 0 ||
                         Object.keys(room.strength).length === 0
                 );
-                console.log(incompleteData);
 
                 if (incompleteData.length) {
+                    // getting index of incomplete room
                     const incompleteDataIndex = incompleteData.map((data) =>
                         totalRoomData.indexOf(data)
                     );
+
+                    // Making room number from index
                     const incompleteRoomNumber = incompleteDataIndex.map(
                         (data) => data + 1
                     );
-                    console.log(incompleteRoomNumber);
+
                     setAlertText(
                         `Incomplete Data at Room Number: ${incompleteRoomNumber} ! You may either complete it or remove it.`
                     );
@@ -111,6 +117,7 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
                 };
             } else {
                 setAlertText("Please provide room data to continue.");
+                return false;
             }
         } else {
             if (buildingData.length) {
@@ -143,6 +150,7 @@ const CalculatorHandler = ({ questionData, handlingNext, quizButtonStyle }) => {
                 };
             } else {
                 setAlertText("Please provide building data to continue.");
+                return false;
             }
         }
         console.log(dataSet);

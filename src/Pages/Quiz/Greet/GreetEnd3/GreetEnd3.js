@@ -12,6 +12,7 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
     const [revealSolution, setRevealSolution] = useState(false);
     const [state, setState] = useState(true);
 
+    // Revealing text one by one in timely manner
     useEffect(() => {
         setTimeout(() => {
             setRevealName(false);
@@ -54,24 +55,7 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
         }, 14000);
 
         return () => clearTimeout();
-    }, []);
-
-    // const handlingContinue = () => {
-    //     setState(false);
-    //     setTimeout(() => {
-    //         setQuizSection(quizSection + 1);
-    //     }, 1000);
-    //     clearTimeout();
-    // };
-
-    // <Button
-    //     type="submit"
-    //     sx={{ display: "block", mx: "auto", mt: 3 }}
-    //     onClick={() => handlingContinue()}
-    //     variant="contained"
-    // >
-    //     Continue
-    // </Button>;
+    }, [handlingNext]);
 
     const cleaningProducts = [
         "Lysol",
@@ -90,7 +74,13 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
         <div>
             {revealName && (
                 <Fade Top opposite when={state}>
-                    <Typography variant="h3">Welcome {customerName}</Typography>
+                    <Typography sx={{ mb: 3 }} variant="h3">
+                        Hello{" "}
+                        <span className="highlight-text">{customerName}</span>
+                    </Typography>
+                    <Typography variant="h3">
+                        Welcome to Clean Solutions.
+                    </Typography>
                 </Fade>
             )}
 
