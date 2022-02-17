@@ -3,12 +3,17 @@ import useData from "../../../hooks/useData";
 import AppHome from "../AppHome/AppHome/AppHome/AppHome";
 
 import Greet from "../Greet/Greet/Greet";
+import Result from "../Result/Result/Result";
 import "./Quiz.css";
 
 const Quiz = () => {
     const { quizSection } = useData();
 
-    const components = [<Greet></Greet>, <AppHome></AppHome>];
+    const components = [
+        <Greet></Greet>,
+        <AppHome></AppHome>,
+        <Result></Result>
+    ];
 
     return (
         <Box className="quiz-container">

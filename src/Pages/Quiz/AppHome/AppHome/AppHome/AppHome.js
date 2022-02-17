@@ -16,18 +16,23 @@ const AppHome = () => {
     const [sectionUserData, setSectionUserData] = useState({});
     const [questionIndex, setQuestionIndex] = useState(null);
     const [totalQuestion, setTotalQuestion] = useState(null);
+    const [totalAppLength, setTotalAppLength] = useState(null);
     const [selectedSubHeadingIndex, setSelectedSubHeadingIndex] =
         useState(null);
     const [revealState, setRevealState] = useState(true);
 
-    const { appIndex, setAppIndex, userAnswer, setUserAnswer } = useData();
+    const { appIndex, setAppIndex, userAnswer, setUserAnswer, setQuizSection } =
+        useData();
 
     // Fetching data
     useEffect(() => {
         fetch("Quiz.json")
             .then((res) => res.json())
             .then((data) => setQuestionData(data));
-    }, []);
+        fetch("Quiz.json")
+            .then((res) => res.json())
+            .then((data) => setTotalAppLength(data.length));
+    }, [totalAppLength]);
 
     // Show circular progress till questionData updated
     if (questionData.length === 0) {
@@ -78,16 +83,30 @@ const AppHome = () => {
         // If an app ends
         if (questionIndexUpdate === totalQuestion) {
             const newUserAnswer = _.cloneDeep(userAnswer);
-            newUserAnswer.mainQuizAnswers.push(updatedSectionUserData); // latest sectionUser Data
+            if (updatedSectionUserData) {
+                newUserAnswer.mainQuizAnswers.push(updatedSectionUserData); // latest sectionUser Data
+            } else {
+                newUserAnswer.mainQuizAnswers.push(sectionUserData);
+            }
             setUserAnswer(newUserAnswer);
             console.log(newUserAnswer);
+
+            // setTimeout used for giving time to update data to state before unmount the component
             setTimeout(() => {
-                setAppIndex(appIndex + 1);
-                // resetting all states for new app.
-                setSectionUserData({});
-                setQuestionIndex(null);
-                setTotalQuestion(null);
-                setSelectedSubHeadingIndex(null);
+                if (appIndex === totalAppLength - 1) {
+                    // if appHome components ends
+                    setQuizSection((quizSection) => quizSection + 1);
+                    console.log("Quiz end");
+                    return false;
+                } else {
+                    // Increase appIndex por next App menu
+                    setAppIndex(appIndex + 1);
+                    // resetting all states for new app.
+                    setSectionUserData({});
+                    setQuestionIndex(null);
+                    setTotalQuestion(null);
+                    setSelectedSubHeadingIndex(null);
+                }
             }, 500);
             clearTimeout();
         }

@@ -257,6 +257,7 @@ const CalculatorHandler = ({ questionData, handlingNext }) => {
                             setIsRoomCalculatorSelected(true);
                             setBuildingData([]);
                             setBuildingList([{ id: "xyz123" }]);
+                            setLastRoomId("");
                         }}
                         sx={{ mx: 1, my: 1 }}
                     >
