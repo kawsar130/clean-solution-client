@@ -43,8 +43,14 @@ const CustomerInfo2 = ({ handlingNext }) => {
         </Button>
     ];
     return (
-        <Box noValidate sx={{ width: 700 }}>
-            <Typography variant="h3" sx={{ mb: 3 }}>
+        <Box
+            noValidate
+            sx={{
+                width: { xs: "100%", sm: "500px", md: "700px" },
+                px: { xs: 1 }
+            }}
+        >
+            <Typography variant="h4" sx={{ mb: 3 }}>
                 What's your name?
             </Typography>
             <ValidationTextField

@@ -273,19 +273,25 @@ const RoomCalculator = ({
                     onClick={() => removeRoom(id)}
                     sx={{
                         position: "absolute",
-                        top: "10px",
-                        right: "20px",
+                        top: "0px",
+                        right: "0px",
                         color: "gray",
                         "&:hover": {
                             transform: "scale(1.1)"
                         }
                     }}
                 >
-                    <Typography variant="h4">{roomRemoveIcon}</Typography>
+                    <Typography variant="h5">{roomRemoveIcon}</Typography>
                 </Button>
             )}
-            <Box sx={{ display: "flex" }}>
-                <Box sx={{ px: 5 }}>
+            <Grid container>
+                <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={6}
+                    sx={{ px: { xs: 0, sm: 2, md: 5 } }}
+                >
                     <ValidationTextField
                         sx={{ my: 1 }}
                         label="Height (Approx.)"
@@ -326,26 +332,27 @@ const RoomCalculator = ({
                         sx={{
                             display: "flex",
                             flexDirection: { xs: "column", sm: "row" },
-                            justifyContent: "space-around"
+                            justifyContent: "space-around",
+                            my: 2
                         }}
                     >
-                        <Typography variant="h6">
+                        <Typography sx={{ fontWeight: "bold" }}>
                             Area: {roomData.area} ft
                             <sup>2</sup>
                         </Typography>
-                        <Typography variant="h6">
+                        <Typography sx={{ fontWeight: "bold" }}>
                             Volume: {roomData.volume} ft
                             <sup>3</sup>
                         </Typography>
                     </Box>
-                </Box>
-                <Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
                     {strengthList && (
                         <Box
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                px: 5
+                                px: { xs: 0, sm: 2, md: 5 }
                             }}
                         >
                             <Typography variant="h6">Strength</Typography>
@@ -393,8 +400,8 @@ const RoomCalculator = ({
                             )}
                         </Box>
                     )}
-                </Box>
-            </Box>
+                </Grid>
+            </Grid>
             {isStrengthSelected === false && (
                 <Alert
                     sx={{

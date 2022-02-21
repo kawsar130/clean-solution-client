@@ -2,6 +2,7 @@
     background: url("https://i.ibb.co/qNrGqKr/v870-tang-36.jpg");
     background-size: cover;
     min-height: 100vh;
+    background-attachment: fixed;
 }
 
 .quiz-container-layer {

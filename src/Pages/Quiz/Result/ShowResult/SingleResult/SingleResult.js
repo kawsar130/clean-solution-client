@@ -12,7 +12,8 @@ const SingleResult = ({ app, appHomeIcons }) => {
             md={12}
             lg={12}
             sx={{
-                p: 2
+                px: { xs: 0, sm: 2 },
+                py: 2
             }}
         >
             <Grid
@@ -24,7 +25,7 @@ const SingleResult = ({ app, appHomeIcons }) => {
                     border: "1px solid rgba(150, 150, 150, 0.5)",
                     backgroundColor: "rgba(240, 240, 250, 0.8)",
                     "&:hover": {
-                        backgroundColor: "rgba(235, 235, 240, 0.9)",
+                        backgroundColor: "rgba(240, 240, 245, 0.9)",
                         boxShadow: "3px 3px 10px rgba(220, 220, 220, 0.8)"
                     },
                     borderRadius: "5px",
@@ -36,7 +37,7 @@ const SingleResult = ({ app, appHomeIcons }) => {
                 <Grid
                     item
                     sx={{
-                        display: "flex",
+                        display: { xs: "none", sm: "flex", md: "flex" },
                         justifyContent: "center",
                         alignItems: "center"
                     }}
@@ -54,7 +55,7 @@ const SingleResult = ({ app, appHomeIcons }) => {
                         {appHomeIcons}
                     </Typography>
                 </Grid>
-                <Grid item sx={{ textAlign: "left" }} xs={9}>
+                <Grid item sx={{ textAlign: "left" }} xs={12} md={9}>
                     <Box>
                         <Typography variant="h5" sx={{ mb: 1 }}>
                             {heading}
@@ -71,7 +72,7 @@ const SingleResult = ({ app, appHomeIcons }) => {
                                             "rgba(220, 220, 220, 0.8)",
                                         p: 3,
                                         my: 2,
-                                        borderRadius: 1
+                                        borderRadius: 2
                                     }}
                                 >
                                     <Typography>

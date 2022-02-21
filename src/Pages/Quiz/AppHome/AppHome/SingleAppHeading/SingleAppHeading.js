@@ -12,7 +12,7 @@ const SingleAppHeading = ({ app, icon }) => {
             md={6}
             lg={6}
             sx={{
-                p: 3
+                p: { xs: 1, md: 2, lg: 3 }
             }}
         >
             <Grid
@@ -36,7 +36,7 @@ const SingleAppHeading = ({ app, icon }) => {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                    xs={3}
+                    xs={4}
                 >
                     <Typography
                         variant="h2"
@@ -50,7 +50,7 @@ const SingleAppHeading = ({ app, icon }) => {
                         {icon}
                     </Typography>
                 </Grid>
-                <Grid item sx={{ textAlign: "left" }} xs={9}>
+                <Grid item sx={{ textAlign: "left" }} xs={8}>
                     <Box>
                         <Typography variant="h6" sx={{ mb: 1 }}>
                             {heading}

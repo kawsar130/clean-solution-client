@@ -74,11 +74,11 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
         <div>
             {revealName && (
                 <Fade Top opposite when={state}>
-                    <Typography sx={{ mb: 3 }} variant="h3">
+                    <Typography sx={{ mb: 3 }} variant="h4">
                         Hello{" "}
                         <span className="highlight-text">{customerName}</span>
                     </Typography>
-                    <Typography variant="h3">
+                    <Typography variant="h4">
                         Welcome to Clean Solutions.
                     </Typography>
                 </Fade>

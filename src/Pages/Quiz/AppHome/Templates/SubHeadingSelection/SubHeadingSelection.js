@@ -38,7 +38,7 @@ const SubHeadingSelection = ({
     };
 
     return (
-        <Box>
+        <Box sx={{ my: { xs: 5 } }}>
             <Fade right opposite when={revealState}>
                 <Box>
                     <Typography variant="h4" sx={{ mb: 2 }}>

@@ -20,7 +20,7 @@ const AppHomeHeading = ({ questionData, icons, setShowAppHome }) => {
     };
 
     return (
-        <Container>
+        <Container sx={{ my: 5 }}>
             <Fade right opposite when={revealState}>
                 <Box>
                     <Typography variant="h5" sx={{ mb: 5 }}>

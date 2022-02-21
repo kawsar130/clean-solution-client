@@ -1,8 +1,7 @@
-import { Button, Container, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import useData from "../../../../hooks/useData";
-import "./InitialQuiz4.css";
+import { quizButtonStyle } from "../../../../Styles/Styles";
 
 const InitialQuiz4 = ({ setRevealState }) => {
     const { userAnswer, setUserAnswer, quizSection, setQuizSection } =
@@ -37,37 +36,24 @@ const InitialQuiz4 = ({ setRevealState }) => {
         clearTimeout();
     };
 
-    const buttonStyle = {
-        border: "1px solid skyBlue",
-        color: "darkSlateGray",
-        backgroundColor: "rgba(217, 228, 255, 0.8)",
-        "&:hover": {
-            backgroundColor: "rgba(31, 36, 132, 0.8)",
-            color: "white"
-        },
-        fontSize: "2em",
-        p: "2em",
-        m: "0.5em",
-        width: "200px",
-        height: "200px",
-        borderRadius: "5px"
-    };
-
     return (
         <Container>
             <Typography variant="h4">{quiz.quizText}</Typography>
-            <Box sx={{ mt: 4 }}>
+            <Grid
+                container
+                sx={{ display: "flex", justifyContent: "center", mt: 3 }}
+            >
                 {quiz.options.map((option) => (
                     <Button
                         onClick={() => handlingClick(option)}
-                        sx={buttonStyle}
+                        sx={quizButtonStyle}
                         className="initial-quiz-btn"
                         key={option.index}
                     >
                         {option.option}
                     </Button>
                 ))}
-            </Box>
+            </Grid>
         </Container>
     );
 };

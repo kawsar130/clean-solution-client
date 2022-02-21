@@ -1,8 +1,18 @@
-.banner-container {
+.banner-main-container {
     background-image: url("https://i.ibb.co/qNrGqKr/v870-tang-36.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container {
     padding: 0 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-text-container {
@@ -37,4 +47,42 @@
     right: -100px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 688px) {
+    .banner-container {
+        padding: 0 3vw;
+    }
+    .banner-img-2 {
+        display: none;
+    }
+
+    .banner-img-3 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+    .banner-container {
+        padding: 0 5vw;
+    }
+    .banner-img-2 {
+        display: none;
+    }
+
+    .banner-img-3 {
+        display: none;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .banner-img-2 {
+        display: none;
+    }
+
+    .banner-img-3 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1366px) {
 }

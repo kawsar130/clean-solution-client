@@ -158,7 +158,7 @@ const CalculatorHandler = ({ questionData, handlingNext }) => {
     };
 
     return (
-        <Container>
+        <Container sx={{ my: 5 }}>
             <Typography variant="h4" sx={{ mb: 3 }}>
                 {questionData.qIndex + 1}
                 {". "}
