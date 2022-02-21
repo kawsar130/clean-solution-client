@@ -1,0 +1,1239 @@
+[
+    {
+        "heading": "SKIN CONTACT",
+        "headingIndex": 0,
+        "description": "Chlorine Dioxide can destroy germs on skin and has been proven effective as antibacterial and antifungal.",
+        "intro": "Try the strongest hand and skin sanitizer to protect yourself from bacteria, viruses, and more. We reduce our environmental footprint by offering a unique mixing system, which eliminates over 90% of petroleum plastics.",
+        "subheadings": [
+            {
+                "title": "SKIN, HAIR, & HANDS DISINFECTANT",
+                "subHeadingIndex": 0,
+                "qty": "50 ppm 30 seconds",
+                "info": "Chlorine dioxide meets USDA and AMA standards as a sanitizer and can kill over 220 harmful microorganisms.",
+                "questions": [
+                    {
+                        "question": "How many times per day do you use skin sanitizer?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long would you like to have this supply?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "FUNGAL OR BACTERIAL INFECTIONS",
+                "subHeadingIndex": 1,
+                "qty": "10 ppm - 30 seconds",
+                "info": "Chlorine dioxide can kill or treat different infections on the skin while protecting your cells and tissues.",
+                "questions": [
+                    {
+                        "question": "How many times per month do you treat skin infections?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long would you like to have this supply?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "DERMATITIS, DANDRUFF, PSORIASIS, ACNE",
+                "subHeadingIndex": 2,
+                "qty": "10 ppm - 30 seconds",
+                "info": "ClO2 has been proven effective for skin infections such as ringworm, athlete’s foot, and candida invading in nails.",
+                "questions": [
+                    {
+                        "question": "How many times per month do you treat skin ailments topically?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long would you like to have this supply?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "heading": "WATER TREATMENT",
+        "headingIndex": 1,
+        "description": "Kill bacteria, parasites, slime, sludge, and other harmful pathogens to ensure clean, safe drinking water.",
+        "intro": "Clean Solutions provides the ability to sanitize, disinfect, or decontaminate water. You can stop worrying about how to store, or prepare clean drinking water, and start saving time with one easy solution.",
+        "subheadings": [
+            {
+                "title": "DRINKING WATER",
+                "subHeadingIndex": 0,
+                "qty": "0.8 ppm 45 minutes",
+                "info": "ClO2 conveniently removes slime, sludge, odor and harmful pathogens in water and on water contact surfaces.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you want disinfected on a regular or daily basis?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you consume disinfected water?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "SYSTEM DISINFECTION",
+                "subHeadingIndex": 1,
+                "qty": "50 ppm - 12 hours then full flush",
+                "info": "Shock treatment (followed by a flush, or rinse) kills bacteria, mold, and more within tanks, lines, and entire systems.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you use a shock treatment?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "LONG TERM WATER STORAGE",
+                "subHeadingIndex": 2,
+                "qty": "0.25 ppm Continuous recirculation",
+                "info": "Clean Solutions provides expedient technology for you to treat water on a regular basis or in case of emergency.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "heading": "HOME AND GARDEN",
+        "headingIndex": 2,
+        "description": "ClO2 is eco-friendly and safe for hard and soft surfaces, food, and food contact surfaces with no harmful residues.",
+        "intro": "A bulk multipurpose sanitizer for hard and soft surfaces, floors, walls, upholstery, furniture, laundry, etc; even food contact surfaces. Stop purchasing single-use, toxic cleaners sold in limited quantities.",
+        "subheadings": [
+            {
+                "title": "PRODUCE & EGGS",
+                "subHeadingIndex": 0,
+                "qty": "5 ppm - Soak-10 minutes",
+                "info": "Cleaning raw produce and eggs by killing germs and bacteria contributes to a shelf life up to three times longer.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use when soaking or rinsing food?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize produce or eggs?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "RAW FISH & MEAT",
+                "subHeadingIndex": 1,
+                "qty": "50ppm Quick dip",
+                "info": "Chlorine dioxide is EPA cleared as a disinfectant for raw meat such as beef, poultry, crustaceans, fish and more.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use for soaking or dipping raw fish or meat?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize raw fish or meat?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "PACKAGED FOOD",
+                "subHeadingIndex": 2,
+                "qty": "20ppm Spray",
+                "info": "Disinfect surfaces of sealed packages, as well as where food is stored, to kill germs and keep your kitchen clean.",
+                "questions": [
+                    {
+                        "question": "How many times per month do you bring home sealed or packaged items?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "On an average shopping trip, how many items are sealed or wrapped?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Package",
+                            "5 Packages",
+                            "10 Packages",
+                            "15 Packages",
+                            "30 Packages"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "FOOD CONTACT SURFACES",
+                "subHeadingIndex": 3,
+                "qty": "Spray 20 ppm- 10 minutes vs soak 10 ppm - 5 minutes",
+                "info": "ClO2 can disinfect and deodorize surfaces in the kitchen without any rinse required and no residue leftover.",
+                "questions": [
+                    {
+                        "question": "Select the items you want to clean in your kitchen and dining areas.",
+                        "qIndex": 0,
+                        "answer": [
+                            {
+                                "ansIndex": "0",
+                                "name": "Counters Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "1",
+                                "name": "Tables Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "2",
+                                "name": "Cabinets Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "3",
+                                "name": "Appliances Refrigerators StovesSpray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "4",
+                                "name": "Equipment Utensils soak",
+                                "qty": "10 ppm - 5 minutes"
+                            },
+                            {
+                                "ansIndex": "5",
+                                "name": "Tools Freezers Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "6",
+                                "name": "Ice System",
+                                "qty": ""
+                            },
+                            {
+                                "ansIndex": "7",
+                                "name": "Water System",
+                                "qty": ""
+                            }
+                        ],
+                        "ansType": "checkbox"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize food contact surfaces?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "HARD AND SOFT SURFACES",
+                "subHeadingIndex": 4,
+                "qty": "",
+                "info": "Instead of masking the smell of odor control your environment by sterilizing material, objects and air right from the source.",
+                "questions": [
+                    {
+                        "question": "How do you want to treat surfaces?",
+                        "qIndex": 0,
+                        "answer": ["Spray and Wipe", "Mop/Soak/Wash"],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many times per month do you clean or deodorize (per each type of application)?",
+                        "qIndex": 1,
+                        "strength": [
+                            { "index": 0, "name": "Light 20ppm" },
+                            { "index": 1, "name": "Moderate 100ppm" },
+                            { "index": 2, "name": "Heavy 200ppm" }
+                        ],
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "Fogging",
+                "subHeadingIndex": 5,
+                "qty": "",
+                "info": "The EPA has found that indoor air is around 5 times more polluted than outside air, with some buildings having 100 times more pollution.",
+                "questions": [
+                    {
+                        "question": "Calculate multiple rooms for different strengths.",
+                        "question1": "Calculate total Square Feet of Buildings.",
+                        "qIndex": 0,
+                        "strength": [
+                            {
+                                "index": 0,
+                                "name": "Light 20ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 1,
+                                "name": "Moderate 100ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 2,
+                                "name": "Heavy 200ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 3,
+                                "name": "Fumigate or HVAC 500ppm",
+                                "selectedStatus": false
+                            }
+                        ],
+                        "ansType": "calculator"
+                    },
+
+                    {
+                        "question": "How many times per month do you (prior strength selected inserted here) sanitize, disinfect, or deodorize?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "heading": "TRAVEL AND LEISURE",
+        "headingIndex": 3,
+        "description": "Clean Solutions is a compact solution for traveling, hotels, AirBnB, auto, RV, bus, aircraft and marine decontamination.",
+        "intro": "Clean Solutions is compact and portable in case of emergencies, while traveling, for recreational vehicles, and for camping. Use on any surface including skin and water. Allowing you to go further, and stay longer.",
+        "subheadings": [
+            {
+                "title": "DRINKING WATER",
+                "subHeadingIndex": 0,
+                "qty": "0.8 ppm 45 minutes",
+                "info": "Stay prepared where there may be a lack of fresh, clean water for drinking or cleaning. ClO2 removes slime, sludge, and other harmful pathogens in water and on water contact surfaces.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you want disinfected on a regular or daily basis?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you consume disinfected drinking water?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 3,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "HOTEL, AIRBNB, & HOSPITALITY",
+                "subHeadingIndex": 1,
+                "qty": "",
+                "info": "Clean Solutions provides easy to apply, portable, and compact products to use anywhere you go.",
+                "questions": [
+                    {
+                        "question": "How do you want to treat surfaces?",
+                        "qIndex": 0,
+                        "answer": [
+                            "Spray # of rooms?",
+                            "Mop/Soak/Wash Volume in gallons?"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many gallons do you want disinfected on a regular or daily basis?",
+                        "qIndex": 1,
+                        "strength": [
+                            { "index": 0, "name": "Light 20ppm" },
+                            { "index": 1, "name": "Moderate 100ppm" },
+                            {
+                                "index": 2,
+                                "name": "Heavy 200ppm more than 1 location"
+                            }
+                        ],
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "FOGGING",
+                "subHeadingIndex": 2,
+                "qty": "",
+                "info": "Do you want to be sure that all of the surfaces and space in buildings you occupy are completely free of germs?",
+                "questions": [
+                    {
+                        "question": "Calculate multiple rooms for different strengths.",
+                        "question1": "Calculate total Square Feet of Buildings.",
+                        "qIndex": 0,
+                        "strength": [
+                            {
+                                "index": 0,
+                                "name": "Light 20ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 1,
+                                "name": "Moderate 100ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 2,
+                                "name": "Heavy 200ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 3,
+                                "name": "Fumigate or HVAC 500ppm",
+                                "selectedStatus": false
+                            }
+                        ],
+                        "ansType": "calculator"
+                    },
+                    {
+                        "question": "How many times per month do you (prior strength selected inserted here) sanitize, disinfect, or deodorize?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long do you want your supply to last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "WATER SYSTEM DISINFECTION",
+                "subHeadingIndex": 3,
+                "qty": "50 ppm - 12 hours then full flush",
+                "info": "Chlorine dioxide can be used in auto, truck, bus, and RV to kill bacteria and mold while controlling biofilms in water and on water contact surfaces.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you use a shock treatment?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many times per month do you use a shock treatment?",
+                        "qIndex": 3,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "LONG TERM WATER STORAGE",
+                "subHeadingIndex": 4,
+                "qty": "0.25 ppm Continuous recirculation ",
+                "info": "Clean water, water contact surfaces, or water systems such as tanks and transfer lines within recreational or marine systems.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "heading": "PROFESSIONAL ESTABLISHMENTS",
+        "headingIndex": 4,
+        "description": "From farms to pharmacies, and businesses to bus-lines, we have a solution for every budget and situation.",
+        "intro": "Germs cause businesses, and people to suffer from doing essential tasks like work, school, or shopping. ClO2 can be applied in medical, industrial, commercial, retail, recreational, and other facilities.",
+        "subheadings": [
+            {
+                "title": "HARD AND SOFT SURFACES",
+                "subHeadingIndex": 0,
+                "qty": "",
+                "info": "We provide hospital strength sanitizer for routine or periodic decontamination and have a solution for every budget and situation.",
+                "questions": [
+                    {
+                        "question": "How do you want to treat surfaces?",
+                        "qIndex": 0,
+                        "answer": [
+                            "Spray # of rooms?",
+                            "Mop/Soak/Wash Volume in gallons"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many times per month do you clean surfaces?",
+                        "qIndex": 1,
+                        "strength": [
+                            { "index": 0, "name": "Light 20ppm" },
+                            { "index": 1, "name": "Moderate 100ppm" },
+                            { "index": 2, "name": "Heavy 200ppm" }
+                        ],
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "SYSTEM DISINFECTION",
+                "subHeadingIndex": 1,
+                "qty": "50 ppm - Circulate for 12 hours followed by a full flush",
+                "info": "Shock treatment (followed by flush, or rinse) kills bacteria, mold, and more within tanks, lines, and entire systems.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you use a shock treatment?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 3,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "LONG TERM WATER STORAGE",
+                "subHeadingIndex": 2,
+                "qty": "0.25 ppm Continuous recirculation ",
+                "info": "Clean Solutions provides expedient technology for you to treat water on a regular basis or in case of an emergency.",
+                "questions": [
+                    {
+                        "question": "How many gallons are within the system(s)",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 1,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many places would you keep this supply?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    }
+                ]
+            },
+            {
+                "title": "PRODUCE & EGGS",
+                "subHeadingIndex": 3,
+                "qty": "5 ppm - Soak-10 minutes",
+                "info": "Cleaning germs and bacteria on raw produce and eggs contribute to a longer shelf life up to 3 times.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use when soaking or rinsing food?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize produce or eggs?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "RAW FISH & MEAT",
+                "subHeadingIndex": 4,
+                "qty": "50 ppm Quick dip",
+                "info": "Chlorine dioxide is EPA cleared as a disinfectant, (as well as an antimicrobial for water and ice to thaw, transport, and store) for raw meat such as beef, poultry, crustaceans, fish and more.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use when soaking or dipping meat?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize raw fish or meat?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "FOOD CONTACT SURFACES",
+                "subHeadingIndex": 5,
+                "qty": "Spray 20 ppm- 10 minutes vs soak 10 ppm - 5 minutes",
+                "info": "ClO2 can disinfect and deodorize surfaces in the kitchen without any rinsing required and no residue leftover.",
+                "questions": [
+                    {
+                        "question": "Select the items you want to clean in your kitchen and dining areas.",
+                        "qIndex": 0,
+                        "answer": [
+                            {
+                                "ansIndex": "0",
+                                "name": "Counters Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "1",
+                                "name": "Tables Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "2",
+                                "name": "Cabinets Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "3",
+                                "name": "Appliances Refrigerators StovesSpray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "4",
+                                "name": "Equipment Utensils soak",
+                                "qty": "10 ppm - 5 minutes"
+                            },
+                            {
+                                "ansIndex": "5",
+                                "name": "Tools Freezers Spray",
+                                "qty": "20 ppm - 10 minutes"
+                            },
+                            {
+                                "ansIndex": "6",
+                                "name": "Ice System",
+                                "qty": ""
+                            },
+                            {
+                                "ansIndex": "7",
+                                "name": "Water System",
+                                "qty": ""
+                            }
+                        ],
+                        "ansType": "checkbox"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize food contact surfaces?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "AREA FOGGING AND VAPOR DISINFECTANT",
+                "subHeadingIndex": 6,
+                "qty": "",
+                "info": "Pollution held inside is constantly blown around through air ducts, furnaces, filters, ventilation, etc., allowing a breeding environment for dangerous pollutants.",
+                "questions": [
+                    {
+                        "question": "Calculate multiple rooms for different strengths.",
+                        "question1": "Calculate total Square Feet of Buildings.",
+                        "qIndex": 0,
+                        "strength": [
+                            {
+                                "index": 0,
+                                "name": "Light 20ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 1,
+                                "name": "Moderate 100ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 2,
+                                "name": "Heavy 200ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 3,
+                                "name": "Fumigate or HVAC 500ppm",
+                                "selectedStatus": false
+                            }
+                        ],
+                        "ansType": "calculator"
+                    },
+                    {
+                        "question": "How many times per month do you (prior strength selected inserted here) sanitize, disinfect, or deodorize?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long do you want your supply to last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "heading": "FARM AND RANCH",
+        "headingIndex": 5,
+        "description": "One effective and convenient sanitizer for vegetation, hydro and aeroponics, animals, surfaces, cracks, crevices and more.",
+        "intro": "Our company is dedicated to reducing diseases in both agricultural and horticultural conditions through disinfction in animal enclosures, beds, stalls, cages, coops, hatcheries and more; resulting in healthier commodities.",
+        "subheadings": [
+            {
+                "title": "HARD AND SOFT SURFACES",
+                "subHeadingIndex": 0,
+                "qty": "",
+                "info": "From livestock in hatcheries, zoos, laboratories, breeding, and grooming establishments, to plants in every growing variety, chlorine dioxide kills bacteria and microorganisms, deactivates mold, and rinses away pesticides.",
+                "questions": [
+                    {
+                        "question": "How do you want to treat surfaces?",
+                        "qIndex": 0,
+                        "answer": [
+                            "Spray # of rooms?",
+                            "Mop/Soak/Wash Volume in gallons"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many times per month do you clean surfaces?",
+                        "qIndex": 1,
+                        "strength": [
+                            { "index": 0, "name": "Light 20ppm" },
+                            { "index": 1, "name": "Moderate 100ppm" },
+                            { "index": 2, "name": "Heavy 200ppm" }
+                        ],
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "FOGGING",
+                "subHeadingIndex": 1,
+                "qty": "",
+                "info": "Would you like to improve indoor air quality by removing mold, allergens, toxins and other pathogens that can harm your health, or the health of plants and animals?",
+                "questions": [
+                    {
+                        "question": "Calculate multiple rooms for different strengths.",
+                        "question1": "Calculate total Square Feet of Buildings.",
+                        "qIndex": 0,
+                        "strength": [
+                            {
+                                "index": 0,
+                                "name": "Light 20ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 1,
+                                "name": "Moderate 100ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 2,
+                                "name": "Heavy 200ppm",
+                                "selectedStatus": false
+                            },
+                            {
+                                "index": 3,
+                                "name": "Fumigate or HVAC 500ppm",
+                                "selectedStatus": false
+                            }
+                        ],
+                        "ansType": "calculator"
+                    },
+                    {
+                        "question": "How many times per month do you (prior strength selected inserted here) sanitize, disinfect, or deodorize?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "PRODUCE & EGGS",
+                "subHeadingIndex": 2,
+                "qty": "5 ppm - Soak-10 minutes",
+                "info": "Cleaning raw produce and eggs, by killing germs and bacteria, contributes to a longer shelf life up to 3 times.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use when soaking or rinsing food?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize produce or eggs?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long do you want your supply to last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "RAW FISH & MEAT",
+                "subHeadingIndex": 3,
+                "qty": "50 ppm Quick dip",
+                "info": "Chlorine dioxide is EPA cleared as a disinfectant, (as well as an antimicrobial for water and ice to thaw, transport, and store) for raw meat such as beef, poultry, crustaceans, fish and more.",
+                "questions": [
+                    {
+                        "question": "How many gallons do you typically use when soaking or dipping meat?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize raw fish or meat?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": [
+                            "1 Month",
+                            "6 months",
+                            "1 Year",
+                            "2 Years",
+                            "5 Years"
+                        ],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "LIVESTOCK DISINFECTION",
+                "subHeadingIndex": 4,
+                "qty": "80 ppm",
+                "info": "ClO₂ can be used directly on skin contact to sanitize and disinfect fur, hair and coats and is EPA registered to inactivate viruses, kill and repel ticks, fleas, mice, and other insects.",
+                "questions": [
+                    {
+                        "question": "How many animals do you have that are regularly disinfected, washed, or deodorized?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How do you clean them?",
+                        "qIndex": 1,
+                        "answer": [
+                            "Spray 80 ppm",
+                            "Rinse 80 ppm",
+                            "Dip 80 ppm",
+                            "Soak 80 ppm"
+                        ],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": "How many times per month do you sanitize, disinfect, or deodorize animals or pets?",
+                        "qIndex": 2,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 3,
+                        "answer": ["1 Year", "2 Years", "5 Years", "10 Years"],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "Water",
+                "subHeadingIndex": 5,
+                "qty": "",
+                "info": "Do you want to treat water contact surfaces to kill bacteria, mold, and other microorganisms in gardens, greenhouses, and other plant and food production environments? ",
+                "questions": [
+                    {
+                        "question": "How many gallons of water do you use to treat contact surfaces?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How many times per month do you treat contact surfaces?",
+                        "qIndex": 1,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 2,
+                        "answer": ["1 Year", "2 Years", "5 Years", "10 Years"],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "SEEDS AND PLANTS",
+                "subHeadingIndex": 6,
+                "qty": "",
+                "info": "ClO2 is effective at removing biofilms and killing mold. When left untreated infectious diseases increase, putting entire crops at risk before seeds are even planted.",
+                "questions": [
+                    {
+                        "question": [
+                            "ENSURE SANITIZED SEEDS 0.25PPM.",
+                            "Destroy biofilms and treat plants of pathogens and microorganisms.",
+                            "2 ppm Maintain freshness and extend shelf life of flowers and cuttings 10 PPM"
+                        ],
+                        "ansType": "info"
+                    },
+                    {
+                        "question": "How many times per month do you?",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 1,
+                        "answer": ["1 Year", "2 Years", "5 Years", "10 Years"],
+                        "ansType": "quiz"
+                    }
+                ]
+            },
+            {
+                "title": "MUSHROOMS",
+                "subHeadingIndex": 7,
+                "qty": "",
+                "info": "For disinfection of substrates used in mushroom and other fungi cultivation as well as spawn production, processing and packing, chlorine dioxide can be used. Spray mushroom beds to control and suppress bacteria, and algae (pre-and post-casing)",
+                "questions": [
+                    {
+                        "question": "How many times per month do you",
+                        "qIndex": 0,
+                        "ansType": "number"
+                    },
+                    {
+                        "question": "How long should this supply last?",
+                        "qIndex": 1,
+                        "answer": ["1 Year", "2 Years", "5 Years", "10 Years"],
+                        "ansType": "quiz"
+                    },
+                    {
+                        "question": [
+                            "Ensure seeds are disinfected from mold spores, etc - Concentration 0.20 ppm",
+                            "Destroys biofilms and treats plants of pathogens - Concentration 0.25 ppm",
+                            "Maintain freshness and extend shelf life for flowers and cuttings - Concentration 10 ppm"
+                        ],
+                        "ansType": "info"
+                    }
+                ]
+            }
+        ]
+    }
+]
