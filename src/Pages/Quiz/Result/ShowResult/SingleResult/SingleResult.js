@@ -86,31 +86,242 @@ const SingleResult = ({ app, appHomeIcons }) => {
                                         </span>{" "}
                                         {ans.questionText}
                                     </Typography>
-                                    <Typography>
-                                        <span
-                                            style={{
-                                                fontWeight: "bold",
-                                                color: "gray"
-                                            }}
-                                        >
-                                            Answer:
-                                        </span>{" "}
-                                        {(ans.ansType === "number" ||
-                                            ans.ansType === "quiz") &&
-                                            ans.answerText}{" "}
-                                        {ans.strengthList &&
-                                            ans.ansType === "number" &&
-                                            `( Strength: ${ans.selectedStrengthText} )`}
-                                        {ans.ansType === "checkbox" &&
-                                            ans.answerText.map((ans, index) => (
+                                    {ans.ansType !== "calculator" && (
+                                        <Box>
+                                            <Typography>
                                                 <span
-                                                    key={index}
-                                                    style={{ display: "block" }}
+                                                    style={{
+                                                        fontWeight: "bold",
+                                                        color: "gray"
+                                                    }}
                                                 >
-                                                    {index + 1}. {ans}
-                                                </span>
-                                            ))}
-                                    </Typography>
+                                                    Answer:
+                                                </span>{" "}
+                                                {(ans.ansType === "number" ||
+                                                    ans.ansType === "quiz") &&
+                                                    ans.answerText}{" "}
+                                                {ans.strengthList &&
+                                                    ans.ansType === "number" &&
+                                                    `( Strength: ${ans.selectedStrengthText} )`}
+                                                {ans.ansType === "checkbox" &&
+                                                    ans.answerText.map(
+                                                        (ans, index) => (
+                                                            <span
+                                                                key={index}
+                                                                style={{
+                                                                    display:
+                                                                        "block"
+                                                                }}
+                                                            >
+                                                                {index + 1}.{" "}
+                                                                {ans}
+                                                            </span>
+                                                        )
+                                                    )}
+                                            </Typography>
+                                        </Box>
+                                    )}
+                                    {ans.ansType === "calculator" && (
+                                        <Grid container>
+                                            {ans.answers.type === "RoomData" &&
+                                                ans.answers.roomData.map(
+                                                    (room, index) => (
+                                                        <Grid
+                                                            item
+                                                            xs={12}
+                                                            sm={12}
+                                                            md={6}
+                                                            lg={4}
+                                                            key={room.roomId}
+                                                        >
+                                                            <Box
+                                                                sx={{
+                                                                    border: 2,
+                                                                    borderColor:
+                                                                        "gray",
+                                                                    backgroundColor:
+                                                                        "rgba(240, 240, 240, 0.8)",
+                                                                    borderRadius: 2,
+                                                                    m: 1,
+                                                                    p: 1
+                                                                }}
+                                                            >
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Room
+                                                                        Number:
+                                                                    </span>{" "}
+                                                                    {index + 1}
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Area:
+                                                                    </span>{" "}
+                                                                    {room.area}{" "}
+                                                                    ft
+                                                                    <sup>2</sup>
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Volume:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        room.volume
+                                                                    }{" "}
+                                                                    ft
+                                                                    <sup>3</sup>
+                                                                </Typography>
+                                                            </Box>
+                                                        </Grid>
+                                                    )
+                                                )}
+
+                                            {ans.answers.type ===
+                                                "BuildingData" &&
+                                                ans.answers.buildingData.map(
+                                                    (building, index) => (
+                                                        <Grid
+                                                            item
+                                                            xs={12}
+                                                            sm={12}
+                                                            md={12}
+                                                            lg={12}
+                                                            key={
+                                                                building.roomId
+                                                            }
+                                                        >
+                                                            <Box
+                                                                sx={{
+                                                                    border: 2,
+                                                                    borderColor:
+                                                                        "gray",
+                                                                    backgroundColor:
+                                                                        "rgba(240, 240, 240, 0.8)",
+                                                                    borderRadius: 2,
+                                                                    m: 1,
+                                                                    p: 1
+                                                                }}
+                                                            >
+                                                                <Typography
+                                                                    sx={{
+                                                                        mb: 1
+                                                                    }}
+                                                                >
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "darkSlateGray",
+                                                                            fontSize:
+                                                                                "1.1em"
+                                                                        }}
+                                                                    >
+                                                                        Whole
+                                                                        Building
+                                                                        Data:
+                                                                    </span>{" "}
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Height:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        building.height
+                                                                    }{" "}
+                                                                    ft
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Width:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        building.width
+                                                                    }{" "}
+                                                                    ft
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Length:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        building.length
+                                                                    }{" "}
+                                                                    ft
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Area:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        building.area
+                                                                    }{" "}
+                                                                    ft
+                                                                    <sup>2</sup>
+                                                                </Typography>
+                                                                <Typography>
+                                                                    <span
+                                                                        style={{
+                                                                            fontWeight:
+                                                                                "bold",
+                                                                            color: "gray"
+                                                                        }}
+                                                                    >
+                                                                        Volume:
+                                                                    </span>{" "}
+                                                                    {
+                                                                        building.volume
+                                                                    }{" "}
+                                                                    ft
+                                                                    <sup>3</sup>
+                                                                </Typography>
+                                                            </Box>
+                                                        </Grid>
+                                                    )
+                                                )}
+                                        </Grid>
+                                    )}
                                 </Box>
                             ))}
                         </Box>
