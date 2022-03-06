@@ -46,8 +46,15 @@ const CustomerInfo2 = ({ handlingNext }) => {
         <Box
             noValidate
             sx={{
-                width: { xs: "100%", sm: "500px", md: "700px" },
-                px: { xs: 1 }
+                maxWidth: {
+                    xs: "95%",
+                    sm: "80%",
+                    md: "75%",
+                    lg: "70%",
+                    xl: "70%"
+                },
+                my: 5,
+                mx: "auto"
             }}
         >
             <Typography variant="h4" sx={{ mb: 3 }}>

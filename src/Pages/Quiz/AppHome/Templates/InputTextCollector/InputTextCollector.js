@@ -123,7 +123,20 @@ const InputTextCollector = ({
     ];
 
     return (
-        <Box noValidate sx={{ maxWidth: 700, my: 5 }}>
+        <Box
+            noValidate
+            sx={{
+                maxWidth: {
+                    xs: "95%",
+                    sm: "80%",
+                    md: "75%",
+                    lg: "70%",
+                    xl: "70%"
+                },
+                my: 5,
+                mx: "auto"
+            }}
+        >
             <Typography variant="h4" sx={{ mb: 3 }}>
                 {questionData.qIndex + 1}
                 {". "}

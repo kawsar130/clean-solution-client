@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import useData from "../../../../hooks/useData";
 import { quizButtonStyle } from "../../../../Styles/Styles";
@@ -37,7 +37,7 @@ const InitialQuiz4 = ({ setRevealState }) => {
     };
 
     return (
-        <Container>
+        <Box>
             <Typography variant="h4">{quiz.quizText}</Typography>
             <Grid
                 container
@@ -54,7 +54,7 @@ const InitialQuiz4 = ({ setRevealState }) => {
                     </Button>
                 ))}
             </Grid>
-        </Container>
+        </Box>
     );
 };
 

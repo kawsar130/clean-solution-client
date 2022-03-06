@@ -71,14 +71,14 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
     ];
 
     return (
-        <div>
+        <Box>
             {revealName && (
                 <Fade Top opposite when={state}>
-                    <Typography sx={{ mb: 3 }} variant="h4">
+                    <Typography sx={{ fontWeight: "bold", mb: 3 }} variant="h3">
                         Hello{" "}
                         <span className="highlight-text">{customerName}</span>
                     </Typography>
-                    <Typography variant="h4">
+                    <Typography variant="h4" sx={{ fontWeight: "bold" }}>
                         Welcome to Clean Solutions.
                     </Typography>
                 </Fade>
@@ -117,7 +117,7 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
                     </Typography>
                 </Fade>
             )}
-        </div>
+        </Box>
     );
 };
 

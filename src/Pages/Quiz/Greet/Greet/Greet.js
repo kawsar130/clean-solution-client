@@ -7,6 +7,7 @@ import "./Greet.css";
 
 import Fade from "react-reveal/Fade";
 import InitialQuiz4 from "../InitialQuiz4/InitialQuiz4";
+import { Box, Container } from "@mui/material";
 
 const Greet = () => {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -35,11 +36,14 @@ const Greet = () => {
     ];
 
     return (
-        <div className="greet-container">
+        <Box
+            className="greet-container"
+            style={{ overflow: "hidden", width: "100vw" }}
+        >
             <Fade right opposite when={revealState}>
-                {component[componentIndex]}
+                <Container>{component[componentIndex]}</Container>
             </Fade>
-        </div>
+        </Box>
     );
 };
 

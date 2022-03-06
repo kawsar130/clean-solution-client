@@ -113,7 +113,7 @@ const AppHome = () => {
     };
 
     return (
-        <Box>
+        <Box style={{ overflow: "hidden", width: "100vw" }}>
             {showAppHome ? (
                 <Fade right opposite when={revealState}>
                     <AppHomeHeading
@@ -123,19 +123,17 @@ const AppHome = () => {
                     ></AppHomeHeading>
                 </Fade>
             ) : (
-                <Box>
-                    <Fade right opposite when={revealState}>
-                        <SectionDataFixer
-                            sectionData={questionData[appIndex]}
-                            quizButtonStyle={quizButtonStyle}
-                            handlingNext={handlingNext}
-                            allSectionIcons={allSectionIcons}
-                            totalQuestion={totalQuestion}
-                            questionIndex={questionIndex}
-                            selectedSubHeadingIndex={selectedSubHeadingIndex}
-                        ></SectionDataFixer>
-                    </Fade>
-                </Box>
+                <Fade right opposite when={revealState}>
+                    <SectionDataFixer
+                        sectionData={questionData[appIndex]}
+                        quizButtonStyle={quizButtonStyle}
+                        handlingNext={handlingNext}
+                        allSectionIcons={allSectionIcons}
+                        totalQuestion={totalQuestion}
+                        questionIndex={questionIndex}
+                        selectedSubHeadingIndex={selectedSubHeadingIndex}
+                    ></SectionDataFixer>
+                </Fade>
             )}
         </Box>
     );

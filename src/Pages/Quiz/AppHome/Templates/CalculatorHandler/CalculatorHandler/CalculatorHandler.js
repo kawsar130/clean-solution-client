@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
 import _ from "lodash";
-import { Box, Button, Typography, Alert, Container } from "@mui/material";
+import { Box, Button, Typography, Alert } from "@mui/material";
 
 import RoomCalculator from "../RoomCalculator/RoomCalculator";
 
@@ -158,7 +158,7 @@ const CalculatorHandler = ({ questionData, handlingNext }) => {
     };
 
     return (
-        <Container sx={{ my: 5 }}>
+        <Box sx={{ my: 5 }}>
             <Typography variant="h4" sx={{ mb: 3 }}>
                 {questionData.qIndex + 1}
                 {". "}
@@ -273,7 +273,7 @@ const CalculatorHandler = ({ questionData, handlingNext }) => {
                     Go Next
                 </Button>
             </Box>
-        </Container>
+        </Box>
     );
 };
 

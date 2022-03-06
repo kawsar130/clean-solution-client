@@ -4,7 +4,19 @@ import "./StartUpInfo1.css";
 
 const StartUpInfo1 = ({ handlingNext }) => {
     return (
-        <Box sx={{ maxWidth: 700, px: 3 }}>
+        <Box
+            sx={{
+                maxWidth: {
+                    xs: "95%",
+                    sm: "80%",
+                    md: "75%",
+                    lg: "70%",
+                    xl: "70%"
+                },
+                my: 5,
+                mx: "auto"
+            }}
+        >
             <Typography sx={{ mb: 3 }}>
                 Today’s world requires a stronger and safer response for
                 everything from skin contact, to animals, food, water, and every
