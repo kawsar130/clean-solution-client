@@ -74,7 +74,7 @@ const GreetEnd3 = ({ customerName, handlingNext }) => {
         <Box>
             {revealName && (
                 <Fade Top opposite when={state}>
-                    <Typography sx={{ fontWeight: "bold", mb: 3 }} variant="h3">
+                    <Typography sx={{ mb: 3 }} variant="h3">
                         Hello{" "}
                         <span className="highlight-text">{customerName}</span>
                     </Typography>

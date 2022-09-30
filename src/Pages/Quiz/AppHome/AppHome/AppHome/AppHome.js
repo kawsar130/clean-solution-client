@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import AppHomeHeading from "../AppHomeHeading/AppHomeHeading";
 import useData from "../../../../../hooks/useData";
@@ -10,29 +10,24 @@ import { appHomeIcons, allSectionIcons } from "../../../../../Icons/Icons";
 import SectionDataFixer from "../../Templates/SectionDataFixer/SectionDataFixer";
 
 const AppHome = () => {
-    const [questionData, setQuestionData] = useState([]);
     const [showAppHome, setShowAppHome] = useState(true);
     // Section Data states starts here
     const [sectionUserData, setSectionUserData] = useState({});
     const [questionIndex, setQuestionIndex] = useState(null);
     const [totalQuestion, setTotalQuestion] = useState(null);
-    const [totalAppLength, setTotalAppLength] = useState(null);
     const [selectedSubHeadingIndex, setSelectedSubHeadingIndex] =
         useState(null);
     const [revealState, setRevealState] = useState(true);
 
-    const { appIndex, setAppIndex, userAnswer, setUserAnswer, setQuizSection } =
-        useData();
-
-    // Fetching data
-    useEffect(() => {
-        fetch("Quiz.json")
-            .then((res) => res.json())
-            .then((data) => setQuestionData(data));
-        fetch("Quiz.json")
-            .then((res) => res.json())
-            .then((data) => setTotalAppLength(data.length));
-    }, [totalAppLength]);
+    const {
+        appIndex,
+        setAppIndex,
+        userAnswer,
+        setUserAnswer,
+        setQuizSection,
+        questionData,
+        totalAppLength
+    } = useData();
 
     // Show circular progress till questionData updated
     if (questionData.length === 0) {
