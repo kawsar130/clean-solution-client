@@ -3,7 +3,7 @@ import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
 import Quiz from './Pages/Quiz/Quiz/Quiz';
 import DataProvider from './Context/DataProvider';
-import Navbar from './Pages/Shared/NavBar/Navbar/Navbar';
+// import Navbar from './Pages/Shared/NavBar/Navbar/Navbar';
 import './App.css';
 
 function App() {
