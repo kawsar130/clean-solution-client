@@ -1,22 +1,19 @@
 # Clean-Solution
 
-A Quiz App that takes different types of data from the customer for analyzing the customer needs. In future, the app will suggest products according to the customer data.  
+Quiz App that takes various types of data from the user for further analysis.
 
 Features:  
-• Can takses user data and information as Quiz.  
-• User data type can be different according to the question category.  
-• Sequence of Questions vary according to the user selection approach.  
-• Question/Input types are: Short Answer, Single Selection, Multiple Selection, Mathematic Calculation, Info-type, etc.  
-• Smooth animation and responsive user interface.  
+• Dynamic Quiz App that collects different types of data from the user.
+• Quiz questions dynamically change and are directed according to the user's selection approach. That means what comes in next will depend on the type of answer the user had selected previously for the specific question.
+• Question/Input types are Short Answer, Single Selection, Multiple Selection, Mathematic Calculation, Info-type, etc.  
+• Smooth animation and responsive user interface.
 
-## Technologies Used  
+## Technologies Used
 
 • React  
 • React-reveal  
 • Material UI  
 • Fontawesome  
-• React-Router  
+• React-Router
 
 Website Live Demo: https://clean-solution-4599a.web.app/
-
-
